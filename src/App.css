@@ -1,0 +1,81 @@
+/* @import "tailwindcss";
+
+@theme {
+  
+}
+
+@layer base {
+  * {
+    @apply m-0 p-0 box-border no-underline border-0 outline-0 font-['Poppins',sans-serif];
+  }
+  body {
+    @apply w-full h-screen overflow-x-hidden bg-[] text-white ml-[9vw] mr-[9vw];
+  }
+
+  html {
+    @apply text-[62.5%];
+  }
+
+  header {
+    @apply mt-0 w-full bg-yellow-500 filter drop-shadow-[10px] h-[40px] flex justify-between items-center z-[1000];
+  }
+  nav {
+    @apply flex justify-between items-center;
+  }
+
+  nav > * {
+    @apply text-[1.8rem] text-white ml-16 font-[500] transition duration-300 ease-in-out border-b-4 border-b-transparent;
+  }
+}
+
+@layer components {
+  .logo {
+    @apply text-[3rem] text-blue-500 font-[800] leading-none bg-green-300 cursor-pointer flex justify-center items-center transition duration-500 ease-in-out;
+  }
+
+  .logo:hover {
+    @apply scale-110;
+  }
+  .no-list-style {
+    @apply list-none;
+  }
+  
+  nav > * {
+    @apply text-[1.8rem] text-white ml-16 font-[500] transition duration-300 ease-in-out border-b-4 border-b-transparent;
+  }
+
+  nav > *:hover,
+  nav > *.active {
+    @apply text-blue-500 border-b-4 border-b-blue-500;
+  }
+} */
+
+/* Utils */
+.no-list-style {
+  list-style-type: none;
+}
+.no-link-style {
+  text-decoration: none;
+  cursor: none;
+}
+
+/* Components */
+.nav-items {
+  padding: .2rem .5rem;
+  border: 2px solid dodgerblue;
+}
+
+.logo {
+  font-size: 3rem;
+  color: #063997;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.5s ease;
+  background-color: wheat;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+
