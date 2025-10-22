@@ -1,7 +1,8 @@
 // src/data/portfolio.ts
-import type { Links, Details } from "../types/portfolio";
+import mainBlueDp from "../assets/Image/main_blue_theme.png";
+import type { Links, Details, Photos, PersonalInfo } from "../types/portfolio";
 
-export const links: Links = {
+const links: Links = {
   header: [
     { name: "Home", href: "/#home" },
     { name: "Services", href: "/#services" },
@@ -27,7 +28,7 @@ export const links: Links = {
   ],
 };
 
-export const details: Details = {
+const details: Details = {
   services: [
     "Software Engineer - Full Stack Developer",
     "Electrical Installation & Power Solutions",
@@ -106,12 +107,26 @@ export const details: Details = {
     },
   ],
 };
-export const photos: {
-  dp: string;
-  alt_dp: string;
-} = {
-  dp: "./assets/Image/'main_blue theme'",
-  alt_dp: "Sasuke_Uchiha_main.png"
+const photos: Photos = {
+    dark: {
+      dp: mainBlueDp,
+      alt: "Sasuke_Uchiha_main.png"
+    },
+    light: {
+      dp: "",
+      alt: ""
+    }
 };
 
-// export default { links, details, photos };
+const personalInfo: PersonalInfo = {
+  name: "Ariori Abdulrafiu Olayemi",
+  role: "Front-End Developer & Electrical Technician",
+  tagline:
+    "Blending design, technology, and engineering to turn ideas into elegant, responsive, and impactful digital experiences.",
+  description:
+    "I’m a passionate Front-End Developer and Electrical Technician with a strong drive for innovation and precision. I specialize in crafting visually appealing, responsive, and efficient web interfaces that bring ideas to life. With a background in engineering and hands-on experience in electrical systems, I combine creativity, technical expertise, and problem-solving skills to build digital products that are both functional and impactful. My goal is to design solutions that seamlessly connect technology with human experience.",
+  location: "Lagos, Nigeria",
+};
+
+
+export  { links, details, photos, personalInfo };

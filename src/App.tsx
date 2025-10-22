@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { links, details, photos } from './data/portfolio.ts'
+import { links, details, photos, personalInfo } from './data/portfolio.ts'
 import './App.css'
 
 const Links = ({ value, hrefs, className }: { value: string, hrefs: string, className?: string }) => (
@@ -8,11 +8,14 @@ const Links = ({ value, hrefs, className }: { value: string, hrefs: string, clas
 
 
 const App = ()=> {
+  // Debugging Section
+  // console.log(photos.dark.dp);
+
   return (
     <>
+    {/* Header */}
       <header>
         <Links value="Ariori" className="logo" hrefs={links.header[0].href} />
-
         <nav className="nav">
           {links.header.map(
             (item, index) => (
@@ -20,23 +23,24 @@ const App = ()=> {
             )
           )}
         </nav>
-        
       </header>
-      <main className="home">
+      
+      {/* Main */}
+      <main className="home" id="home">
         <div className="home-img">
-          <img src={photos.dp} alt="" />
+          <img className="dp-img" src={photos.dark.dp} alt={photos.dark.alt} />
         </div>
         <div className="home-content">
-          <h1>Hi, It's <span>Ariori</span></h1>
-            <h3 className="typing-text">I'm a <span></span></h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus labore dolores esse. Odit similique doloribus tenetur doloremque, sunt commodi in ipsa repudiandae debitis deleniti blanditiis quibusdam quaerat neque asperiores ea.</p>
-            <div className="social-icons">
-                <a href="#"><i className="fa-brands fa-linkedin"></i></a>
-                <a href="#"><i className="fa-brands fa-github"></i></a>
-                <a href="#"><i className="fa-brands fa-x-twitter"></i></a>
-                <a href="#"><i className="fa-brands fa-instagram"></i></a>
-            </div>
-            <a href="#" className="btn">Hire me</a>
+          <h1>Hi, It's <span className="blue-txt highlight">Ariori</span>...</h1>
+          <h3 className="typing-text">I'm a <span >{personalInfo.role}</span></h3>
+          <p className="landing-info letter-space">{personalInfo.description}</p>
+          <div className="social-icons">
+              <a href="#"><i className="fa-brands fa-linkedin"></i></a>
+              <a href="#"><i className="fa-brands fa-github"></i></a>
+              <a href="#"><i className="fa-brands fa-x-twitter"></i></a>
+              <a href="#"><i className="fa-brands fa-instagram"></i></a>
+          </div>
+          <a href="#" className="btn">Hire me</a>
         </div>
       </main>
     </>
