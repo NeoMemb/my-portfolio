@@ -40,11 +40,13 @@
   font-weight: 500;
   margin-left: 4rem;
   transition: 1000ms ease;
-  & :hover {
+  & :hover,
+  &.active {
     border-bottom: 2px solid var(--base-color);
     color: var(--base-color);
   }
 }
+
 .logo {
   font-size: 3rem;
   color: var(--base-color);
@@ -80,17 +82,19 @@
 
 .home-img {
   border-radius: 50%;
-  & img.dp-img {
-    position: relative;
-    width: 32vw;
-    border-radius: 50%;
-    box-shadow: 2px 2px 25px solid var(--base-color);
-    cursor: pointer;
-  }
-  &img.dp-img:hover {
-      font-size: 1.8rem;
-      font-weight: 800;
-    }
+  border: 2px solid var(--accent-hover);
+}
+
+.dp-img {
+  position: relative;
+  width: 32vw;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 300ms ease-in;
+}
+
+.dp-img:hover {
+  box-shadow: 0 0 35px 12px var(--base-color);
 }
 
 .social-icons a {

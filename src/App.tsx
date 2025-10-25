@@ -26,7 +26,8 @@ const App = ()=> {
       </header>
       
       {/* Main */}
-      <main className="home" id="home">
+      <main className="home">
+        <section className="home" id="home">
         <div className="home-img">
           <img className="dp-img" src={photos.dark.dp} alt={photos.dark.alt} />
         </div>
@@ -42,6 +43,7 @@ const App = ()=> {
           </div>
           <a href="#" className="btn">Hire me</a>
         </div>
+        </section>
       </main>
     </>
   )
