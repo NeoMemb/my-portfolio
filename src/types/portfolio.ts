@@ -75,4 +75,13 @@ interface PersonalInfo {
   location: string;
 }
 
-export type { Links, Details, Photos, PersonalInfo };
+interface ButtonProp {
+  id: string;
+  onClick: () => {};
+  ariaLabel?: string;
+  ariaControls?: string;
+  ariaExpanded?: boolean;
+  children: React.ReactNode;
+}
+
+export type { Links, Details, Photos, PersonalInfo, ButtonProp };

@@ -61,6 +61,7 @@
 section#home {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   gap: 8rem;
   background-color: var(--bg-primary);
@@ -72,6 +73,7 @@ section#home {
   & .home-content p.landing-info {
     font-size: 1.6rem;
     font-weight: 500;
+    text-align: center;
   }
   & .home-content h3 {
     font-size: 4rem;
@@ -153,13 +155,27 @@ span.typing-text {
 
 }
 
+.nav {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid greenyellow;
+}
 
-@media screen and (min-width: 320px) and (max-width: 720px) {
-  section#home {
-    flex-direction: column;
+.header {
+  position: relative;
+  &.menu-btn {
+    position: absolute;
+    left: 0;
   }
-  .nav-items {
-    display: none;
+}
+
+@media screen and (min-width: 720px) and (max-width: 1024px) {
+  /* section#home {
+    flex-direction: row;
+  } */
+  .nav {
+    display: flex;
   }
   .dp-img {
     width: 35vw;

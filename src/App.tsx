@@ -1,37 +1,49 @@
-import { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { library } from '@fortawesome/fontawesome-svg-core'
+import React, { useState } from 'react'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { library } from '@fortawesome/fontawesome-svg-core'
 
-/* import all the icons in Free Solid, Free Regular, and Brands styles */
-import { fas } from '@fortawesome/free-solid-svg-icons'
-import { far } from '@fortawesome/free-regular-svg-icons'
-import { fab } from '@fortawesome/free-brands-svg-icons'
+// /* import all the icons in Free Solid, Free Regular, and Brands styles */
+// import { fas } from '@fortawesome/free-solid-svg-icons'
+// import { far } from '@fortawesome/free-regular-svg-icons'
+// import { fab } from '@fortawesome/free-brands-svg-icons'
 import { links, details, photos, personalInfo } from './data/portfolio.ts'
+import { Button } from '../Components/Button.tsx'
 import './App.css'
 
-library.add(fas, far, fab)
+// library.add(fas, far, fab)
 
 const Links = ({ value, hrefs, className }: { value: string, hrefs: string, className?: string }) => (
   <a href={hrefs} className={className}>{value}</a>
 )
 
 
+
 const App = ()=> {
   // Debugging Section
   // console.log(photos.dark.dp);
 
+  // States and variables...
+  const [isOpen, setIsOpen] = useState(false)
+  const openSideBar= () => { setIsOpen(true);}
+  const closeSideBar = () => { setIsOpen(false)}
+
   return (
     <>
     {/* Header */}
-      <header>
+      <header className="header">
         <Links value="Ariori" className="logo" hrefs={links.header[0].href} />
         <nav className="nav">
-          {links.header.map(
+          <Button id="" onClick={()=>{openSideBar()}}/>
+          <ul>
+            {links.header.map(
             (item, index) => (
               <li className="no-list-style nav-items" key={index+1}><Links value={item.name} hrefs={item.href} className="no-link-style"/></li>
             )
-          )}
+            )}
+          </ul>
+          
         </nav>
+        <div className="menu-btn"><i className='fa-solid fa-burger'></i></div>
       </header>
       
       {/* Main */}
