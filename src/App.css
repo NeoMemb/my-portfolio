@@ -47,6 +47,12 @@
   }
 }
 
+#close-sidebar-btn,
+#open-sidebar-btn {
+  width: 25px;
+  height: 25px;
+}
+
 .logo {
   font-size: 3rem;
   color: var(--base-color);

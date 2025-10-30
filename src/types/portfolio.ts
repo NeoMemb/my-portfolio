@@ -77,7 +77,7 @@ interface PersonalInfo {
 
 interface ButtonProp {
   id: string;
-  onClick: () => {};
+  onClick: () => void;
   ariaLabel?: string;
   ariaControls?: string;
   ariaExpanded?: boolean;
