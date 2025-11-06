@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { links, details, photos, personalInfo } from './data/portfolio.ts'
+import { Button } from "./components/Button.tsx"
 import './App.css'
 
 const Links = ({ value, hrefs, className }: { value: string, hrefs: string, className?: string }) => (
@@ -8,6 +9,11 @@ const Links = ({ value, hrefs, className }: { value: string, hrefs: string, clas
 
 
 const App = ()=> {
+  // Set Menu-(IsOpen || IsClose)
+  const [isOpen, setIsOpen] = useState(false);
+  const [isClose, setIsClose] = useState(true);
+  const toggleFunc = () => {  setIsOpen(!isOpen); setIsClose(!isClose)};
+
   // Debugging Section
   // console.log(photos.dark.dp);
 
@@ -17,11 +23,34 @@ const App = ()=> {
       <header>
         <Links value="Ariori" className="logo" hrefs={links.header[0].href} />
         <nav className="nav">
-          {links.header.map(
-            (item, index) => (
-              <li className="no-list-style nav-items" key={index+1}><Links value={item.name} hrefs={item.href} className="no-link-style"/></li>
-            )
-          )}
+            {/* 
+            On Mobile screen:
+                Two different states:
+                    1. Open Menu
+                    2. Close menu
+
+            isOpen is true:
+
+            */}
+            {/* There'll be a menu-bar here, which'll open the ul li items */}
+            <Button id="open-menu" 
+            className={(isOpen) ? ("hide") : ("show")} 
+            onClick={() => {toggleFunc()}}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-menu-icon lucide-menu"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+            </Button>
+            <ul className={`nav-links no-list-style ${(!isOpen && isClose) ? ("hide") : ("show")}`}>
+                <Button id="close-menu" 
+                className={`close-btn ${(isClose) ? ("hide") : ("show")}`}
+                onClick={() => { toggleFunc()}}
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                </Button>
+                {links.header.map(
+                    (item, index) => (
+                        <li className="no-list-style nav-items" key={index+1}><Links value={item.name} hrefs={item.href} className="no-link-style"/></li>
+                    )
+                )}
+            </ul>
         </nav>
       </header>
       

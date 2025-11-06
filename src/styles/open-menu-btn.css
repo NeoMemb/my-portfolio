@@ -1,0 +1,20 @@
+/* menu-btn styling */
+#open-menu, 
+#close-menu {
+  background: var(--bg-secondary);
+  border: none;
+  color: var(--base-color);
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#open-menu > *,
+#close-menu > * {
+  font-size: 3.5em;
+  width: .8em;
+  height: .8em;
+}
+
+#close-menu {
+  text-align: right;
+}

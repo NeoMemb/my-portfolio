@@ -75,4 +75,11 @@ interface PersonalInfo {
   location: string;
 }
 
-export type { Links, Details, Photos, PersonalInfo };
+interface ButtonProp {
+  children: React.ReactNode;
+  onClick?: () => void;
+  id?: string;
+  className?: string;
+}
+
+export type { Links, Details, Photos, PersonalInfo, ButtonProp };

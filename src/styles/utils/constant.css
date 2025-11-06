@@ -1,0 +1,21 @@
+/* Utils */
+.no-list-style {
+  list-style-type: none;
+}
+.no-link-style {
+  text-decoration: none;
+}
+.blue-txt {
+  color: var(--base-color);
+}
+.highlight::selection {
+  background-color: var(--text-primary);
+  color: var(--highlight-color);
+}
+.no-select {
+  user-select: none;
+}
+.letter-space {
+  word-spacing: .32em;
+  letter-spacing: .05em;
+}

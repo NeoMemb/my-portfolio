@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
-
+@import "./styles/logo.css";
+@import "./styles/open-menu-btn.css";
+@import "./styles/hidden.css";
+@import "./styles/nav-items.css";
+@import "./styles/social-icons.css";
+@import "./styles/utils/constant.css";
+@import "./styles/Media-Query/Mobile.css";
+@import "./styles/Media-Query/Mobile-Pad.css";
+@import "./styles/Media-Query/Laptop-screens.css";
+@import "./styles/Media-Query/Large-Screens.css";
+@import "./styles/home-section.css";
 :root {
   /* || COLORS */
   --bg-primary: #0d1117; /* Background color*/
@@ -29,9 +39,11 @@ html, body {
 }
 
 body {
+  min-height: 100vh;
   margin: 3vh 9vh;
   overflow-x: hidden;
   border: 2px solid red;
+  background-color: var(--bg-primary);
 }
 
 header {
@@ -39,9 +51,11 @@ header {
   background-color: transparent;
   justify-content: space-between;
   align-items: center;
+  border: 2px dashed orange;
+  position: relative;
 }
 
-nav {
+nav ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -52,3 +66,4 @@ a {
   text-decoration: none;
   color: white
 }
+
