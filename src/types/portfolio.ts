@@ -82,4 +82,10 @@ interface ButtonProp {
   className?: string;
 }
 
-export type { Links, Details, Photos, PersonalInfo, ButtonProp };
+interface AnchorLink {
+  value: string;
+  hrefs: string;
+  className?: string;
+}
+
+export type { Links, Details, Photos, PersonalInfo, ButtonProp, AnchorLink };
