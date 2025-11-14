@@ -1,0 +1,15 @@
+.typing-text > span {
+    overflow-x: hidden;
+    border-right: .15em solid var(--base-color);
+    white-space: nowrap;
+    animation: typing 4s steps(40, end) forwards,
+    blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0;}
+    to { width: 100%;}
+}
+@keyframes blink-caret {
+    from, to {border-color: transparent;}
+}
