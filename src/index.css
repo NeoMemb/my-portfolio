@@ -4,6 +4,7 @@
 @import "./styles/hidden.css";
 @import "./styles/nav-items.css";
 @import "./styles/social-icons.css";
+@import "./styles/typewriter.css";
 @import "./styles/utils/constant.css";
 @import "./styles/Media-Query/Mobile.css";
 @import "./styles/Media-Query/Mobile-Pad.css";
@@ -36,6 +37,7 @@ html, body {
   font-size: 62.5%;
   font-family: 'Poppins', sans-serif;
   color: white;
+  overflow-x: hidden;
 }
 
 body {

@@ -1,11 +1,8 @@
 section.home {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 8rem;
-  background-color: var(--bg-primary);
-  padding-inline: 3em;
+  gap: 2em;
+  margin-block: 1.7em;
+  & .home-content { border: 2px solid purple;}
   & .home-content h1 {
     font-size: 6rem;
     font-weight: 700;
