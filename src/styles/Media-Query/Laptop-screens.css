@@ -25,6 +25,12 @@
     .nav ul.nav-links {
         position: static;
         display: flex;
+        height: 30px;
+        width: auto;
+        background-color: rgba(19, 19, 19, 0.3);
+        backdrop-filter: blur(7px);
+        border-radius: 3px;
+        box-shadow: 2px 2px 7px 2px rgb(0, 0, 0);
     }
 
     li.nav-items > * {
@@ -32,4 +38,8 @@
         /* height: 50px; */
     }
 
+    /* Home section */
+    section.home {
+        flex-direction: row;
+    }
 }
