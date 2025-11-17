@@ -1,5 +1,6 @@
 section.home {
   display: flex;
+  padding: 0 2.5vw;
   gap: 2em;
   margin-block: 1.7em;
   & .home-content { border: 2px solid purple;}

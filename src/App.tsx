@@ -73,14 +73,19 @@ const App = ()=> {
           <a href="#" className="btn">Hire me</a>
         </div>
         </section>
-        <section className="about-me">
+        <section className="about-me" id="about-me">
           <div className="txt-content">
             <h1 className="blue-txt">About Me</h1>
             <p>
-              I'm Ariori Abdulrafiu, from Nigeria. I'm {details.services[0]} and also I'm {details.services[1]} and {details.services[2]}.
+              {`I'm Ariori Abdulrafiu, from Nigeria. I'm ${details.services[0]} and also I'm ${details.services[1]} and ${details.services[2]}.`}
             </p>
           </div>
         </section>
+        <section id="skills" className="skills"></section>
+        <section id="education" className="education"></section>
+        <section id="experience" className="experience"></section>
+        <section id="projects" className="projects"></section>
+        <section id="contact" className="contact"></section>
       </main>
     </>
   )

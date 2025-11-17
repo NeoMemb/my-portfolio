@@ -5,7 +5,7 @@ import type { Links, Details, Photos, PersonalInfo } from "../types/portfolio";
 const links: Links = {
   header: [
     { name: "Home", href: "/#home" },
-    { name: "Services", href: "/#services" },
+    { name: "About", href: "/#about-me" },
     { name: "Skills", href: "/#skills" },
     { name: "Education", href: "/#education" },
     { name: "Experience", href: "/#experience" },
