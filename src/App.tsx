@@ -62,7 +62,7 @@ const App = ()=> {
         <div className="home-content">
           <h1>Hi, It's <span className="blue-txt highlight">Ariori</span>...</h1>
           {/* <h3 className="typing-text">I'm a <span >{personalInfo.role}</span></h3> */}
-          <h3 className="typing-text">I'm a <span></span></h3>
+          <h3 className="typing-text">I'm a <span>Software Developer</span></h3>
           <p className="landing-info letter-space">{personalInfo.description}</p>
           <div className="social-icons">
               <a href="#"><i className="fa-brands fa-linkedin"></i></a>
@@ -72,6 +72,14 @@ const App = ()=> {
           </div>
           <a href="#" className="btn">Hire me</a>
         </div>
+        </section>
+        <section className="about-me">
+          <div className="txt-content">
+            <h1 className="blue-txt">About Me</h1>
+            <p>
+              I'm Ariori Abdulrafiu, from Nigeria. I'm {details.services[0]} and also I'm {details.services[1]} and {details.services[2]}.
+            </p>
+          </div>
         </section>
       </main>
     </>
