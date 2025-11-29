@@ -30,16 +30,28 @@ interface Education {
   year: string;
 }
 
-interface Experience {
-  role: string;
-  company: string;
-  responsibilities: string[];
-}
+// interface Experience {
+//   role: string;
+//   company: string;
+//   responsibilities: string[];
+// }
 
 interface Project {
   name: string;
   description: string;
   link: string;
+}
+
+interface skillItemList {
+  name: string,
+  level: number,
+  icon: string
+}
+
+interface SkillItems {
+  id: number,
+  category: string,
+  items: skillItemList[]
 }
 
 interface Skills {
@@ -53,7 +65,7 @@ interface Details {
   services: string[];
   skills: Skills;
   education: Education[];
-  experience: Experience[];
+  // experience: Experience[];
   projects: Project[];
 }
 
@@ -88,4 +100,33 @@ interface AnchorLink {
   className?: string;
 }
 
-export type { Links, Details, Photos, PersonalInfo, ButtonProp, AnchorLink };
+interface Projects {
+  id: number,
+  title: string,
+  description: string,
+  image: string,
+  technologies: string[],
+  liveUrl: string,
+  githubUrl: string,
+  featured: Boolean
+}
+
+interface Experience {
+  id: number;
+  title: string;
+  company: string;
+  period: string;
+  description: string;
+  current: Boolean
+}
+
+// For future use
+// interface Testimonials {
+//   id: number;
+//   name: string;
+//   position: string;
+//   image: string;
+//   text: string;
+// }
+
+export type { Links, Details, SkillItems, Photos, PersonalInfo, ButtonProp, AnchorLink, Projects, Experience };
