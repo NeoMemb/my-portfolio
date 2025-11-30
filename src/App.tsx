@@ -5,6 +5,7 @@
 import { Navigation } from './components/Navigation.tsx'
 import { Hero } from "./components/Hero.tsx"
 import './App.css';
+import './styles/glassmorphism.css'
 
 const App = () => {
   // Debugging Section
