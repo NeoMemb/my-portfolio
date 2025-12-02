@@ -1,6 +1,6 @@
 // src/data/portfolio.ts
 import mainBlueDp from "../assets/Image/main_blue_theme.png";
-import type { Links, Details, Photos, PersonalInfo, SkillItems, Projects, Experience } from "../types/portfolio.tsx";
+import type { Links, Details, Photos, PersonalInfo, SkillItems, Projects, Experience } from "../types/portfolio";
 
 // Mock data for portfolio - will be replaced with backend integration
 

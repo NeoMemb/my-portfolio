@@ -4,8 +4,8 @@
 // import { Link } from "./components/Link.tsx"
 import { Navigation } from './components/Navigation.tsx'
 import { Hero } from "./components/Hero.tsx"
-import './App.css';
-import './styles/glassmorphism.css'
+// import './App.css';
+// import './styles/glassmorphism.css'
 
 const App = () => {
   // Debugging Section
@@ -13,16 +13,22 @@ const App = () => {
 
   return (
     <div className="App bg-[#050816] text-white min-h-screen">
-    {/* Header */}
+      {/* Header */}
       <header>
-        
+        <Navigation />
       </header>
-      <Navigation />
       {/* Main */}
       <main>
-        
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Experience />
+        <Contact />
       </main>
-      <Hero />
+      <footer>
+        <Footer />
+      </footer>
     </div>
   )
 }

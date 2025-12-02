@@ -5,6 +5,8 @@ import { Download, Mail } from 'lucide-react';
 import { personalInfo, links, photos } from '../data/portfolio';
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 import { FaXTwitter } from "react-icons/fa6"
+import "../styles/glassmorphism.css";
+import "../index.css";
 
 const Hero = () => {
   const handleDownloadResume = () => {
