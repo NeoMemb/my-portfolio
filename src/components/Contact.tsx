@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Mail, MapPin, Send } from 'lucide-react';
+import { Mail, MapPin, Send, type LucideIcon } from 'lucide-react';
 import { FiGithub, FiLinkedin } from "react-icons/fi";
-import { FaGithub, FaXTwitter } from "react-icons/fa6";
+import { FaXTwitter } from "react-icons/fa6";
 
 import { personalInfo, links } from '../data/portfolio';
+import type { IconType } from 'react-icons/lib';
 // import { toast } from '../hooks/use-toast';
 
 const Contact = () => {
@@ -36,14 +37,15 @@ const Contact = () => {
     setIsSubmitting(true);
 
     // Mock submission - will be replaced with backend
-    setTimeout(() => {
-      toast({
-        title: "Message Sent!",
-        description: "Thank you for reaching out. I'll get back to you soon!",
-      });
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setIsSubmitting(false);
-    }, 1000);
+    // Suggestion from AI😂...
+    // setTimeout(() => {
+    //   toast({
+    //     title: "Message Sent!",
+    //     description: "Thank you for reaching out. I'll get back to you soon!",
+    //   });
+    //   setFormData({ name: '', email: '', subject: '', message: '' });
+    //   setIsSubmitting(false);
+    // }, 1000);
   };
 
   const containerVariants = {
@@ -65,7 +67,12 @@ const Contact = () => {
     },
   };
 
-  const contactInfo = [
+  const contactInfo: {
+    icon: LucideIcon;
+    label: string;
+    value: string;
+    link: string | null;
+  }[] = [
     {
       icon: Mail,
       label: 'Email',
@@ -85,16 +92,46 @@ const Contact = () => {
 //     { icon: Linkedin, url: personalInfo.social.linkedin, label: 'LinkedIn' },
 //     { icon: Twitter, url: personalInfo.social.twitter, label: 'Twitter' }
 //   ];
-const socialLinksIcon = [ FiGithub, FiLinkedin, FaXTwitter];
-const socialLinksItems: {
-  icon: string;
+// The values of each of this obj-items in array, socialLinks, comes from three arrays; iconMap, links.social[i].url, links.social[i].platform
+// const socialLinks: {
+//   icon: IconType;
+//   url: string;
+//   label: string;
+// }[] = [
+//   {
+//     icon: FiGithub,
+//     url: links.social[0].url,
+//     label: links.social[0].platform
+//   },
+//   {
+//     icon: FiLinkedin,
+//     url: links.social[1].url,
+//     label: links.social[1].platform
+//   },
+//   {
+//     icon: FaXTwitter,
+//     url: links.social[2].url,
+//     label: links.social[2].platform
+//   }
+// ]
+
+const iconMap: Record<string, IconType> = { 
+  GitHub: FiGithub,
+  LinkedIn:  FiLinkedin, 
+  X_Twitter: FaXTwitter 
+};
+
+const socialLinks: {
+  icon: IconType;
   url: string;
   label: string;
-} = socialLinksIcon.map((items, i) => {
-  icon: items[i],
-  url: links.social[i].url,
-  label: links.social[i].platform
-})
+}[] = links.social.map( (item) => (
+  {
+    icon: iconMap[item.platform],
+    url: item.url,
+    label: item.platform
+  }
+))
 
   return (
     <section id="contact" className="py-20 relative overflow-hidden bg-gradient-to-br from-[#0a0e27] to-[#050816]">
@@ -251,7 +288,7 @@ const socialLinksItems: {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    rows="6"
+                    rows={6}
                     className="w-full px-4 py-3 glass rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all duration-300 resize-none"
                     placeholder="Tell me about your project..."
                   />

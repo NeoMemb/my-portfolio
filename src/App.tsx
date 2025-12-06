@@ -8,6 +8,7 @@ import { Skills } from "./components/Skills.tsx"
 import About from "./components/About.tsx"
 import Projects from "./components/Projects.tsx"
 import Experience from "./components/Experience.tsx"
+import Contact from "./components/Contact.tsx"
 import './App.css';
 // import './styles/glassmorphism.css'
 
@@ -28,7 +29,7 @@ const App = () => {
         <Skills />
         <Projects />
         <Experience />
-        {/* <Contact /> */}
+        <Contact />
       </main>
       <footer>
         {/* <Footer /> */}
