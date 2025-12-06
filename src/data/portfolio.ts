@@ -31,9 +31,9 @@ const links: Links = {
     { name: "Contact", href: "/#contact" },
   ],
   social: [
-    { platform: "GitHub", url: "https://github.com/NeoMemb/" },
+    { platform: "Github", url: "https://github.com/NeoMemb/" },
     { platform: "LinkedIn", url: "https://linkedin.com/in/ariori-abdulrafiu" },
-    { platform: "X (Twitter)", url: "https://x.com/arioriabdulraf1" },
+    { platform: "X-Twitter", url: "https://x.com/arioriabdulraf1" },
     {
       platform: "Instagram",
       url: "https://insta.com/ArioriAbdulraafiuOlayemi/",
@@ -254,7 +254,7 @@ const projects: Projects[] = [
   }
 ];
 
-const experience:  Experience[] = [
+export const experience:  Experience[] = [
   {
     id: 1,
     title: "Front-End Developer",
@@ -298,4 +298,4 @@ export const education = [
   }
 ]
 
-export  { links, skills, details, photos, personalInfo, projects, experience };
+export  { links, skills, details, photos, personalInfo, projects,  };
