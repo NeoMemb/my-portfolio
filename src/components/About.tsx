@@ -111,6 +111,7 @@ const About = () => {
                     variants={itemVariants}
                     whileHover={{ scale: 1.05 }}
                     className="glass rounded-xl p-6 space-y-3 card-lift cursor-pointer"
+                    id="about"
                   >
                     <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center neon-glow">
                       <Icon className="w-6 h-6 text-white" />

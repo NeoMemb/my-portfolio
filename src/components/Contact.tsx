@@ -38,14 +38,10 @@ const Contact = () => {
 
     // Mock submission - will be replaced with backend
     // Suggestion from AI😂...
-    // setTimeout(() => {
-    //   toast({
-    //     title: "Message Sent!",
-    //     description: "Thank you for reaching out. I'll get back to you soon!",
-    //   });
-    //   setFormData({ name: '', email: '', subject: '', message: '' });
-    //   setIsSubmitting(false);
-    // }, 1000);
+    setTimeout(() => {
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      setIsSubmitting(false);
+    }, 1000);
   };
 
   const containerVariants = {
@@ -87,34 +83,6 @@ const Contact = () => {
     }
   ];
 
-//   const socialLinks = [
-//     { icon: Github, url: personalInfo.social.github, label: 'GitHub' },
-//     { icon: Linkedin, url: personalInfo.social.linkedin, label: 'LinkedIn' },
-//     { icon: Twitter, url: personalInfo.social.twitter, label: 'Twitter' }
-//   ];
-// The values of each of this obj-items in array, socialLinks, comes from three arrays; iconMap, links.social[i].url, links.social[i].platform
-// const socialLinks: {
-//   icon: IconType;
-//   url: string;
-//   label: string;
-// }[] = [
-//   {
-//     icon: FiGithub,
-//     url: links.social[0].url,
-//     label: links.social[0].platform
-//   },
-//   {
-//     icon: FiLinkedin,
-//     url: links.social[1].url,
-//     label: links.social[1].platform
-//   },
-//   {
-//     icon: FaXTwitter,
-//     url: links.social[2].url,
-//     label: links.social[2].platform
-//   }
-// ]
-
 const iconMap: Record<string, IconType> = { 
   GitHub: FiGithub,
   LinkedIn:  FiLinkedin, 
@@ -125,13 +93,11 @@ const socialLinks: {
   icon: IconType;
   url: string;
   label: string;
-}[] = links.social.map( (item) => (
-  {
-    icon: iconMap[item.platform],
-    url: item.url,
-    label: item.platform
-  }
-))
+}[] = links.social.map( (item) => ({
+  icon: iconMap[item.platform],
+  url: item.url,
+  label: item.platform
+}))
 
   return (
     <section id="contact" className="py-20 relative overflow-hidden bg-gradient-to-br from-[#0a0e27] to-[#050816]">

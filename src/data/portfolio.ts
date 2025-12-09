@@ -2,24 +2,6 @@
 import mainBlueDp from "../assets/Image/main_blue_theme.png";
 import type { Links, Details, Photos, PersonalInfo, SkillItems, Projects, Experience } from "../types/portfolio";
 
-// Mock data for portfolio - will be replaced with backend integration
-
-// export const personalInfo = {
-//   name: "Your Name",
-//   title: "Front-End Developer",
-//   tagline: "Building the Future, One Line at a Time",
-//   bio: "I am a passionate and versatile software developer with hands-on experience in C, Python, JavaScript, HTML/CSS, Bash scripting, and practical familiarity with Linux environments (including Termux and VirtualBox). Currently advancing my expertise in front-end development through ALX, I build responsive interfaces and functional web applications, leveraging React, Vite, and modern development tools. I enjoy low-level programming concepts, operating systems, and system customization, and I apply this curiosity to practical engineering and tech projects.",
-//   email: "your.email@example.com",
-//   location: "Remote",
-//   profileImage: "https://ui-avatars.com/api/?name=Your+Name&size=400&background=00d4ff&color=050816&bold=true",
-//   resumeUrl: "/resume.pdf",
-//   social: {
-//     github: "https://github.com/yourusername",
-//     linkedin: "https://linkedin.com/in/yourusername",
-//     twitter: "https://twitter.com/yourusername"
-//   }
-// };
-
 const links: Links = {
   header: [
     { name: "Home", href: "/#home" },
@@ -33,7 +15,7 @@ const links: Links = {
   social: [
     { platform: "Github", url: "https://github.com/NeoMemb/" },
     { platform: "LinkedIn", url: "https://linkedin.com/in/ariori-abdulrafiu" },
-    { platform: "X-Twitter", url: "https://x.com/arioriabdulraf1" },
+    { platform: "X_Twitter", url: "https://x.com/arioriabdulraf1" },
     {
       platform: "Instagram",
       url: "https://insta.com/ArioriAbdulraafiuOlayemi/",

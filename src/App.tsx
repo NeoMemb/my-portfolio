@@ -1,4 +1,4 @@
-// import { useState } from 'react'
+import { useRef } from 'react'
 // import { links, details, photos, personalInfo } from './data/portfolio.ts'
 // import { Button } from "./components/Button.tsx"
 // import { Link } from "./components/Link.tsx"
@@ -15,7 +15,11 @@ import './App.css';
 const App = () => {
   // Debugging Section
   // console.log(photos.dark.dp);
-
+  const heroRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const skillRef = useRef<HTMLDivElement>(null);
+  const projectsRef = useRef<HTMLDivElement>(null);
+  const xperienceRef = useRef<HTMLDivElement>(null);
   return (
     <div className="App bg-[#050816] text-white min-h-screen">
       {/* Header */}
@@ -29,7 +33,7 @@ const App = () => {
         <Skills />
         <Projects />
         <Experience />
-        <Contact />
+        {/* <Contact /> */}
       </main>
       <footer>
         {/* <Footer /> */}

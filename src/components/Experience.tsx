@@ -39,9 +39,12 @@ const Experience = () => {
     period: string;
     description: string;
     current?: Boolean;
-  }, icon: LucideIcon, index: number}) => (
+  }, icon: LucideIcon,
+     index: number}) => (
     <motion.div
       variants={itemVariants}
+      initial="hidden"
+      animate="visible"
       className="relative pl-8 pb-8 last:pb-0"
     >
       {/* Timeline Line */}
@@ -131,6 +134,8 @@ const Experience = () => {
             <TabsContent value="experience" className="mt-12">
               <motion.div
                 variants={containerVariants}
+                initial="hidden"
+                animate="visible"
                 className="max-w-3xl mx-auto"
               >
                 {experience.map((item, index) => (
@@ -141,6 +146,7 @@ const Experience = () => {
                     index={index}
                   />
                 ))}
+                {/* My Experience is my concerns 😁iv */}
               </motion.div>
             </TabsContent>
 
@@ -148,6 +154,8 @@ const Experience = () => {
             <TabsContent value="education" className="mt-12">
               <motion.div
                 variants={containerVariants}
+                initial="hidden"
+                animate="visible"
                 className="max-w-3xl mx-auto"
               >
                 {education.map((item, index) => (
