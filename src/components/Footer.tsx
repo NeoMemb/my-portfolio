@@ -1,25 +1,12 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Github, Linkedin, Twitter } from 'lucide-react';
-import { personalInfo } from '../data/mockData';
+import { Heart } from 'lucide-react';
+import { socialLinks } from '../../public/Utils/Constants';
+import { personalInfo, links } from '../data/portfolio';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Contact', href: '#contact' }
-  ];
-
-  const socialLinks = [
-    { icon: Github, url: personalInfo.social.github, label: 'GitHub' },
-    { icon: Linkedin, url: personalInfo.social.linkedin, label: 'LinkedIn' },
-    { icon: Twitter, url: personalInfo.social.twitter, label: 'Twitter' }
-  ];
+  const navLinks = [ ...links.header ];
 
   return (
     <footer className="relative bg-gradient-to-br from-[#050816] to-[#0a0e27] border-t border-cyan-900/20">
@@ -47,7 +34,7 @@ const Footer = () => {
                     whileTap={{ scale: 0.95 }}
                     title={social.label}
                   >
-                    <Icon className="w-5 h-5 text-cyan-400" />
+                    {/* <Icon className="w-6 h-6 text-cyan-400" /> */}
                   </motion.a>
                 );
               })}
@@ -77,8 +64,8 @@ const Footer = () => {
             <div className="space-y-2 text-gray-400">
               <p>
                 <span className="text-cyan-400">Email:</span><br />
-                <a href={`mailto:${personalInfo.email}`} className="hover:text-cyan-400 transition-colors">
-                  {personalInfo.email}
+                <a href={`mailto:${links.contacts[0].value}`} className="hover:text-cyan-400 transition-colors">
+                  {links.contacts[0].value}
                 </a>
               </p>
               <p>
