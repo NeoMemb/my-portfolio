@@ -15,10 +15,10 @@ const links: Links = {
   social: [
     { platform: "Github", url: "https://github.com/NeoMemb/" },
     { platform: "LinkedIn", url: "https://linkedin.com/in/ariori-abdulrafiu" },
-    { platform: "X_Twitter", url: "https://x.com/arioriabdulraf1" },
+    { platform: "X_Twitter", url: "https://x.com/ArioriDev" },
     {
       platform: "Instagram",
-      url: "https://insta.com/ArioriAbdulraafiuOlayemi/",
+      url: "https://instagram.com/arioriabdulrafiu220/",
     },
   ],
   contacts: [
@@ -103,7 +103,7 @@ const details: Details = {
     {
       name: "Portfolio Website",
       description: "Personal portfolio built with React, TailwindCSS & Vite.",
-      link: "https://github.com/NeoMemb/portfolio",
+      link: "https://github.com/NeoMemb/my-portfolio",
     },
   ],
 };
