@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { Heart } from 'lucide-react';
-import { socialLinks } from '../../public/Utils/Constants';
 import { personalInfo, links } from '../data/portfolio';
-
+import { FiGithub, FiLinkedin } from "react-icons/fi";
+import { FaXTwitter, FaInstagram } from "react-icons/fa6"
+// import { type IconType } from 'react-icons/lib';
+const ICONS = [FiGithub, FiLinkedin, FaXTwitter, FaInstagram]
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -21,8 +23,8 @@ const Footer = () => {
               Building innovative solutions with modern technologies.
             </p>
             <div className="flex space-x-4">
-              {socialLinks.map((social, index) => {
-                const Icon = social.icon;
+              {links.social.map((social, index) => {
+                const Icon = ICONS[index]
                 return (
                   <motion.a
                     key={index}
@@ -32,9 +34,9 @@ const Footer = () => {
                     className="p-2 glass rounded-lg hover:neon-glow transition-all duration-300"
                     whileHover={{ scale: 1.1, y: -3 }}
                     whileTap={{ scale: 0.95 }}
-                    title={social.label}
+                    title={social.platform}
                   >
-                    {/* <Icon className="w-6 h-6 text-cyan-400" /> */}
+                    <Icon className="w-6 h-6 text-cyan-400" />
                   </motion.a>
                 );
               })}
@@ -108,4 +110,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export { Footer };
