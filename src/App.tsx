@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+// import { useRef } from 'react'
 // import { links, details, photos, personalInfo } from './data/portfolio.ts'
 // import { Button } from "./components/Button.tsx"
 // import { Link } from "./components/Link.tsx"
