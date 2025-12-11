@@ -9,18 +9,18 @@ import About from "./components/About.tsx"
 import Projects from "./components/Projects.tsx"
 import Experience from "./components/Experience.tsx"
 import { Footer } from "./components/Footer.tsx"
-import Contact from "./components/Contact.tsx"
+// import Contact from "./components/Contact.tsx"
 import './App.css';
 // import './styles/glassmorphism.css'
 
 const App = () => {
   // Debugging Section
   // console.log(photos.dark.dp);
-  const heroRef = useRef<HTMLDivElement>(null);
-  const aboutRef = useRef<HTMLDivElement>(null);
-  const skillRef = useRef<HTMLDivElement>(null);
-  const projectsRef = useRef<HTMLDivElement>(null);
-  const xperienceRef = useRef<HTMLDivElement>(null);
+  // const heroRef = useRef<HTMLDivElement>(null);
+  // const aboutRef = useRef<HTMLDivElement>(null);
+  // const skillRef = useRef<HTMLDivElement>(null);
+  // const projectsRef = useRef<HTMLDivElement>(null);
+  // const xperienceRef = useRef<HTMLDivElement>(null);
   return (
     <div className="App bg-[#050816] text-white min-h-screen">
       {/* Header */}
