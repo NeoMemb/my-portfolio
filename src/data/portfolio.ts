@@ -7,7 +7,6 @@ const links: Links = {
     { name: "Home", href: "/#home" },
     { name: "About", href: "/#about-me" },
     { name: "Skills", href: "/#skills" },
-    { name: "Education", href: "/#education" },
     { name: "Experience", href: "/#experience" },
     { name: "Projects", href: "/#projects" },
     { name: "Contact", href: "/#contact" },
