@@ -2,9 +2,8 @@ import { motion } from 'framer-motion';
 import { Heart } from 'lucide-react';
 import { personalInfo, links } from '../data/portfolio';
 import { FiGithub, FiLinkedin } from "react-icons/fi";
-import { FaXTwitter, FaInstagram } from "react-icons/fa6"
-// import { type IconType } from 'react-icons/lib';
-const ICONS = [FiGithub, FiLinkedin, FaXTwitter, FaInstagram]
+import { FaXTwitter, FaInstagram } from "react-icons/fa6";
+const ICONS = [FiGithub, FiLinkedin, FaXTwitter, FaInstagram];
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
