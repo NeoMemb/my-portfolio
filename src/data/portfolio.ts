@@ -4,12 +4,12 @@ import type { Links, Details, Photos, PersonalInfo, SkillItems, Projects, Experi
 
 const links: Links = {
   header: [
-    { name: "Home", href: "/#home" },
-    { name: "About", href: "/#about-me" },
-    { name: "Skills", href: "/#skills" },
-    { name: "Experience", href: "/#experience" },
-    { name: "Projects", href: "/#projects" },
-    { name: "Contact", href: "/#contact" },
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about-me" },
+    { name: "Skills", href: "#skills" },
+    { name: "Experience", href: "#experience" },
+    { name: "Projects", href: "#projects" },
+    { name: "Contact", href: "#contact" },
   ],
   social: [
     { platform: "Github", url: "https://github.com/NeoMemb/" },

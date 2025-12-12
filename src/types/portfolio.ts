@@ -30,12 +30,6 @@ interface Education {
   year: string;
 }
 
-// interface Experience {
-//   role: string;
-//   company: string;
-//   responsibilities: string[];
-// }
-
 interface Project {
   name: string;
   description: string;
@@ -87,19 +81,6 @@ interface PersonalInfo {
   location: string;
 }
 
-interface ButtonProp {
-  children: React.ReactNode;
-  onClick?: () => void;
-  id?: string;
-  className?: string;
-}
-
-interface AnchorLink {
-  value: string;
-  hrefs: string;
-  className?: string;
-}
-
 interface Projects {
   id: number,
   title: string,
@@ -120,13 +101,4 @@ interface Experience {
   current: Boolean
 }
 
-// For future use
-// interface Testimonials {
-//   id: number;
-//   name: string;
-//   position: string;
-//   image: string;
-//   text: string;
-// }
-
-export type { Links, Details, SkillItems, Photos, PersonalInfo, ButtonProp, AnchorLink, Projects, Experience };
+export type { Links, Details, SkillItems, Photos, PersonalInfo, Projects, Experience };

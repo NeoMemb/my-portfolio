@@ -84,7 +84,7 @@ const Navigation = () => {
               <motion.a
                 key={link.name}
                 href={link.href}
-                onClick={(e) => {
+                onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
                   e.preventDefault();
                   handleLinkClick(link.href);
                 }}
