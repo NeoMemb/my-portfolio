@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Sun, Moon, Monitor } from 'lucide-react';
+import { useTheme } from './ThemeContext';
 import { motion, AnimatePresence } from 'framer-motion';
-import { links, personalInfo } from "../data/portfolio"
+import { links, personalInfo } from "../data/portfolio";
+import '../App.css'
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [theme, setTheme] = useState('dark');
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,32 +19,6 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    // Get saved theme or system preference
-    const savedTheme = localStorage.getItem('theme') || 'system';
-    setTheme(savedTheme);
-    applyTheme(savedTheme);
-  }, []);
-
-  const applyTheme = (newTheme: string) => {
-    if (newTheme === 'system') {
-      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      document.documentElement.classList.toggle('dark', systemPrefersDark);
-      document.documentElement.classList.toggle('light', !systemPrefersDark);
-    } else {
-      document.documentElement.classList.toggle('dark', newTheme === 'dark');
-      document.documentElement.classList.toggle('light', newTheme === 'light');
-    }
-  };
-
-  const toggleTheme = () => {
-    const themes = ['dark', 'light', 'system'];
-    const currentIndex = themes.indexOf(theme);
-    const nextTheme = themes[(currentIndex + 1) % themes.length];
-    setTheme(nextTheme);
-    localStorage.setItem('theme', nextTheme);
-    applyTheme(nextTheme);
-  };
 
   const getThemeIcon = () => {
     if (theme === 'dark') return <Moon className="w-5 h-5" />;
@@ -145,7 +121,7 @@ const Navigation = () => {
                   <motion.a
                     key={link.name}
                     href={link.href}
-                    onClick={(e) => {
+                    onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
                       e.preventDefault();
                       handleLinkClick(link.href);
                     }}

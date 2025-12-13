@@ -10,6 +10,7 @@ import Projects from "./components/Projects.tsx";
 import Experience from "./components/Experience.tsx";
 import { Footer } from "./components/Footer.tsx";
 import './App.css';
+import { ThemeProvider } from './components/ThemeContext';
 // import './styles/glassmorphism.css'
 
 const App = () => {
@@ -17,7 +18,8 @@ const App = () => {
   // console.log(photos.dark.dp);
   
   return (
-    <div className="App bg-[#050816] text-white min-h-screen">
+    <ThemeProvider>
+      <div className="App">
       {/* Header */}
       <header>
         <Navigation />
@@ -33,7 +35,8 @@ const App = () => {
       </main>
       <Footer />
     </div>
-  )
+    </ThemeProvider>
+    )
 }
 
 export default App
