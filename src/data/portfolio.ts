@@ -13,7 +13,7 @@ const links: Links = {
   ],
   social: [
     { platform: "Github", url: "https://github.com/NeoMemb/" },
-    { platform: "LinkedIn", url: "https://www.linkedin.com/in/ariori-abdulrafiu-91a0a1230" },
+    { platform: "LinkedIn", url: "https://www.linkedin.com/in/ariori-abdulrafiu-91a0a1230?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
     { platform: "X_Twitter", url: "https://x.com/ArioriDev" },
     {
       platform: "Instagram",
@@ -280,4 +280,5 @@ export const education = [
 ]
 
 export  { links, skills, details, photos, personalInfo, projects,  };
+
 
