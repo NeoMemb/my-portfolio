@@ -1,0 +1,34 @@
+[33me80c5fd[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m Revise the value of LinkedIn url
+[33m7581557[m Revise portfolio data structure and content
+[33mf583dd8[m Started setting for theme
+[33mda4d564[m Updated pnpm-lock.yaml
+[33mb6550f4[m Just removed unused components, Link.tsx & Button.tsx
+[33mdee3076[m The navigating action is now working...
+[33m282233e[m Removed Education link
+[33m37e5732[m Updated the values of my social-page website
+[33m4c746c6[m Finally commented out the last unused code😥
+[33m4418393[m Commented out unused codes
+[33m1fddf27[m Install some other dependencies on the root folder
+[33ma89a205[m Footer.tsx has been debugged
+[33m403b2b9[m The Footer.tsx bug has been found and yet to be killed
+[33maeeb851[m I've added the initial and state attr for motion.div, which was preventing the Experience.tsx content from showing 💪
+[33m75d2ef5[m Debugged and added Contact component to App.tsx
+[33m95afe21[m About, Skills, Projects and Experience has been added, but Experience is yet to show...
+[33m44aee1d[m Skill.tsx has issue w/ typing Icon var
+[33m9b5d0b7[m .App is text-align: center now
+[33mc8be6d2[m The nav and hero section w/o padding away from the edge of the screen...
+[33m9b18b05[m Got a new design, first started work on it
+[33maa64ee0[m Changed a nav-item name, assigned it an ID and padded the section.home
+[33ma870d11[m Added Favicon
+[33m262ffcf[m Header is now responsive
+[33m219b625[m Error detected with responsive design of the header
+[33me98e9b3[m Added CSS file for typewritter effect
+[33m2bedb9c[m Reduce redundancy of useState hook and separated the Link anchor tag
+[33ma6052e3[m Positioned the sidebar
+[33mc1818c1[m Break App.css into smaller chunks of file and added the (open && close)-menu-btn
+[33maf0cc3f[m Removed the border around dp-image
+[33mdee9622[m Added a blurry effect on dp hover
+[33mbf45f35[m Updated the landing info and developed the social-icons btn
+[33m7380c4a[m Updated the landing info and developed the social-icons btn
+[33me9bb3c6[m Initialized a git project once again
+[33m61fc3cb[m Made the text responsive
