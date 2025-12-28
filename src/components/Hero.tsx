@@ -22,7 +22,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen relative overflow-hidden bg-gradient-to-br from-[#050816] via-[#0a0e27] to-[#1a1f3a]">
+    <section id="home" className="min-h-screen relative overflow-hidden bg-gradient-to-br from-[var(--bg-primary)] via-[var(--bg-secondary)] to-[var(--bg-tertiary)]">
       {/* Geometric Background Pattern */}
       <div className="absolute inset-0 hexagon-pattern opacity-30"></div>
       
@@ -63,7 +63,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-cyan-400 text-lg md:text-xl font-medium"
+              className="text-lg md:text-xl font-medium i-am "
             >
               Hi, I'm
             </motion.h2>

@@ -45,9 +45,9 @@ const Navigation = () => {
   };
 
   const getThemeIcon = () => {
-    if (theme === 'dark') return <Moon className="w-5 h-5" />;
-    if (theme === 'light') return <Sun className="w-5 h-5" />;
-    return <Monitor className="w-5 h-5" />;
+    if (theme === 'dark') return <Moon className="w-5 h-5 text-color" />;
+    if (theme === 'light') return <Sun className="w-5 h-5 text-color" />;
+    return <Monitor className="w-5 h-5 text-color" />;
   };
 
   const handleLinkClick = (href: string) => {
@@ -65,6 +65,7 @@ const Navigation = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled ? 'glass-strong py-4' : 'py-6'
       }`}
+      data-theme={theme}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
@@ -88,7 +89,7 @@ const Navigation = () => {
                   e.preventDefault();
                   handleLinkClick(link.href);
                 }}
-                className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 relative group"
+                className="text-color hover:text-cyan-400 transition-colors duration-300 relative group"
                 whileHover={{ y: -2 }}
               >
                 {link.name}
@@ -125,7 +126,7 @@ const Navigation = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? <X className="w-6 h-6 text-color" /> : <Menu className="w-6 h-6 text-color" />}
             </motion.button>
           </div>
         </div>
@@ -149,7 +150,7 @@ const Navigation = () => {
                       e.preventDefault();
                       handleLinkClick(link.href);
                     }}
-                    className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 py-2"
+                    className="text-color hover:text-cyan-400 transition-colors duration-300 py-2"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}

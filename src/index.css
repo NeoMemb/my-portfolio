@@ -5,6 +5,13 @@
 @import "tailwindcss";
 @import "tw-animate";
 @import "./styles/glassmorphism.css";
+
+/* Dark variant using Tailwind v4 custom variant */
+@custom-variant dark  (&:where([data-theme=dark],  [data-theme=dark] *));
+@custom-variant light (&:where([data-theme=light], [data-theme=light] *));
+@custom-variant oled  (&:where([data-theme=oled],  [data-theme=oled] *));
+@custom-variant sepia (&:where([data-theme=sepia],[data-theme=sepia] *));
+
 /* Define themes using CSS variables */
 @layer base {
     :root {
@@ -45,9 +52,6 @@
         --radius: 0.5rem;
     }
 }
-
-/* Dark variant using Tailwind v4 custom variant */
-@custom-variant dark (&:is(.dark &));
 
 /* Dark theme */
 .dark {
@@ -122,6 +126,7 @@
     --color-border: hsl(var(--border));
     --color-input: hsl(var(--input));
     --color-ring: hsl(var(--ring));
+    --color-accolade: var(--accolade);
 }
 
 @utility animate-accordion-down {
