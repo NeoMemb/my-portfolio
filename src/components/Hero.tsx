@@ -150,15 +150,16 @@ const Hero = () => {
               transition={{ delay: 0.7 }}
               className="flex flex-col sm:flex-row gap-4 pt-6"
             >
-              <motion.button
+              <motion.a
                 onClick={handleContactClick}
+                href={`mailto:${links.contacts[0].value}.com`}
                 className="px-8 py-4 bg-cyan-500 text-white rounded-lg font-semibold hover:bg-cyan-600 transition-all duration-300 flex items-center justify-center space-x-2 neon-glow"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <Mail className="w-5 h-5" />
                 <span>Hire Me</span>
-              </motion.button>
+              </motion.a>
               <motion.button
                 onClick={handleDownloadResume}
                 className="px-8 py-4 glass rounded-lg font-semibold hover:neon-glow transition-all duration-300 flex items-center justify-center space-x-2"
@@ -234,5 +235,6 @@ const Hero = () => {
     </section>
   );
 };
+
 
 export { Hero };
