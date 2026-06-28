@@ -1,5 +1,5 @@
 // src/data/portfolio.ts
-import mainBlueDp from "../assets/Image/main_blue_theme.png";
+import mainBlueDp from "../assets/images/main_blue_theme.png";
 import type { Links, Details, Photos, PersonalInfo, SkillItems, Projects, Experience } from "../types/portfolio";
 
 const links: Links = {
@@ -72,27 +72,13 @@ const details: Details = {
       institution: "Ginoka College & Dee Divine Favor Academy",
       year: "2012 - 2017",
     },
+    {
+      level: "Foundation in Software Engineering",
+      institution: "ALX Africa",
+      year: "2023 - Present",
+    }
   ],
-  // experience: [
-  //   {
-  //     role: "Factory Worker",
-  //     company: "Lexcel Packaging Company",
-  //     responsibilities: ["Loading/unloading goods", "Packaging operations"],
-  //   },
-  //   {
-  //     role: "Iron Bender",
-  //     company: "God's Own Construction Iron Steel",
-  //     responsibilities: ["Bending steel for concrete construction"],
-  //   },
-  //   {
-  //     role: "Solar & Inverter Installer",
-  //     company: "Freelance",
-  //     responsibilities: [
-  //       "Installed inverters and solar panels",
-  //       "Worked on power solutions & electrical installations",
-  //     ],
-  //   },
-  // ],
+  
   projects: [
     {
       name: "My Movie App",
@@ -104,6 +90,16 @@ const details: Details = {
       description: "Personal portfolio built with React, TailwindCSS & Vite.",
       link: "https://github.com/NeoMemb/my-portfolio",
     },
+    {
+      name: "Weather App",
+      description: "Weather forecast app using React and OpenWeatherMap API.",
+      link: "",
+    },
+    {
+      name: "Apple Landing page",
+      description: "Apple landing page clone using React and TailwindCSS.",
+      link: "https://github.com/NeoMemb/gsap_macbook_landing",
+    }
   ],
 };
 const photos: Photos = {
@@ -232,6 +228,16 @@ const projects: Projects[] = [
     liveUrl: "#",
     githubUrl: "#",
     featured: false
+  },
+  {
+    id: 7,
+    title: "Apple Landing Page Clone",
+    description: "A visually appealing clone of the Apple landing page, built with React and TailwindCSS, showcasing responsive design and animations.",
+    image: "https://images.unsplash.com/photo-1612832021080-1f3e5b8c9f1d?w=800&q=80",
+    technologies: ["React", "TailwindCSS", "JavaScript"],
+    liveUrl: "https://gsap-macbook-landing-iota-five.vercel.app/",
+    githubUrl: "https://github.com/NeoMemb/gsap_macbook_landing/",
+    featured: true
   }
 ];
 
