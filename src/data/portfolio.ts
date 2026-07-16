@@ -1,5 +1,5 @@
 // src/data/portfolio.ts
-import mainBlueDp from "../assets/images/main_blue_theme.png";
+import mainBlueDp from "../assets/image/main_blue_theme.png";
 import type { Links, Details, Photos, PersonalInfo, SkillItems, Projects, Experience } from "../types/portfolio";
 
 const links: Links = {
