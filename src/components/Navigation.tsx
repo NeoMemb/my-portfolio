@@ -25,13 +25,19 @@ const Navigation = () => {
   }, []);
 
   const applyTheme = (newTheme: string) => {
+    const root = document.documentElement;
+
     if (newTheme === 'system') {
       const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      document.documentElement.classList.toggle('dark', systemPrefersDark);
-      document.documentElement.classList.toggle('light', !systemPrefersDark);
+      const resolvedTheme = systemPrefersDark ? 'dark' : 'light';
+
+      root.classList.toggle('dark', resolvedTheme === 'dark');
+      root.classList.toggle('light', resolvedTheme === 'light');
+      root.setAttribute('data-theme', resolvedTheme);
     } else {
-      document.documentElement.classList.toggle('dark', newTheme === 'dark');
-      document.documentElement.classList.toggle('light', newTheme === 'light');
+      root.classList.toggle('dark', newTheme === 'dark');
+      root.classList.toggle('light', newTheme === 'light');
+      root.setAttribute('data-theme', newTheme);
     }
   };
 

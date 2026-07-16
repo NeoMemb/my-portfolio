@@ -16,9 +16,11 @@
   --blue-700: #1d4ed8;
   --blue-800: #1e40af;
   --blue-900: #1e3a8a;
+}
 
-  [data-theme=dark] {
-    /* Dark Theme Base */
+:root[data-theme="dark"],
+:root.dark {
+  /* Dark Theme Base */
   --bg-primary: #050816;
   --bg-secondary: #0a0e27;
   --bg-tertiary: #1a1f3a;
@@ -33,10 +35,11 @@
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
   --text-i-am: #26c6da;
-  }
-  
-  [data-theme=light] {
-    /* Light Theme Base */
+}
+
+:root[data-theme="light"],
+:root.light {
+  /* Light Theme Base */
   --bg-primary: #f8faff;
   --bg-secondary: #eef3ff;
   --bg-tertiary: #e6eeff;
@@ -49,8 +52,6 @@
   --text-secondary: #4a5568;
   --text-muted: #718096;
   --text-i-am: #05899b;
-
-  }
 }
 
 /* Text Colors */
