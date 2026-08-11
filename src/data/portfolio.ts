@@ -207,7 +207,7 @@ const projects: Projects[] = [
     technologies: ["NextJs", "TailwindcCSS", "Framer-motion"],
     liveUrl: "raznof-noik.vercel.app",
     githubUrl: "#",
-    featured: true,
+    featured: false,
   },
   {
     id: 5,
