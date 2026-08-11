@@ -29,9 +29,10 @@ const links: Links = {
 
 const details: Details = {
   services: [
-    "Software Engineer - Full Stack Developer",
-    "Electrical Installation & Power Solutions",
-    "Blockchain & Smart Contract Enthusiast",
+    "Software Engineer",
+    // "Electrical Installation & Power Solutions",
+    "Front-end developer",
+    "Back-end developer",
   ],
   skills: {
     languages: [
@@ -245,7 +246,7 @@ const projects: Projects[] = [
 export const experience: Experience[] = [
   {
     id: 1,
-    title: "Front-End Developer",
+    title: "Frontend Developer",
     company: "ALX Africa",
     period: "2024 - Present",
     description:
@@ -254,11 +255,11 @@ export const experience: Experience[] = [
   },
   {
     id: 2,
-    title: "Blockchain Developer",
-    company: "Self-Learning",
+    title: "Backend Developer",
+    company: "Roadmap.sh",
     period: "2024 - Present",
     description:
-      "Studying Solidity for smart contract development and gaining understanding of Ethereum-based applications. Exploring DeFi and Web3 technologies.",
+      "Learning and implementing backend technologies to understand how modern applications are built behind the scenes. Working with APIs, databases, authentication, sessions, caching, and server-side logic to develop robust full-stack solutions.",
     current: true,
   },
   {
