@@ -54,11 +54,7 @@ const details: Details = {
       "AI Prompting - ChatGPT, Claude, Perplexity",
       "Git & GitHub - Version control & collaboration",
     ],
-    others: [
-      "Docker - Containerization (learning)",
-      "Firebase / Appwrite - Backend as a service",
-      "REST APIs & JSON handling",
-    ],
+    others: ["Docker - Containerization (learning)", "Firebase / Appwrite - Backend as a service", "REST APIs & JSON handling"],
   },
   education: [
     {
@@ -76,9 +72,9 @@ const details: Details = {
       level: "Foundation in Software Engineering",
       institution: "ALX Africa",
       year: "2023 - Present",
-    }
+    },
   ],
-  
+
   projects: [
     {
       name: "My Movie App",
@@ -99,18 +95,18 @@ const details: Details = {
       name: "Apple Landing page",
       description: "Apple landing page clone using React and TailwindCSS.",
       link: "https://github.com/NeoMemb/gsap_macbook_landing",
-    }
+    },
   ],
 };
 const photos: Photos = {
-    dark: {
-      dp: mainBlueDp,
-      alt: "Sasuke_Uchiha_main.png"
-    },
-    light: {
-      dp: "",
-      alt: ""
-    }
+  dark: {
+    dp: mainBlueDp,
+    alt: "Sasuke_Uchiha_main.png",
+  },
+  light: {
+    dp: "",
+    alt: "",
+  },
 };
 
 const personalInfo: PersonalInfo = {
@@ -134,8 +130,8 @@ const skills: SkillItems[] = [
       { name: "React", level: 85, icon: "Component" },
       { name: "Next.js", level: 80, icon: "Layers" },
       { name: "TypeScript", level: 75, icon: "FileType" },
-      { name: "TailwindCSS", level: 90, icon: "Paintbrush" }
-    ]
+      { name: "TailwindCSS", level: 90, icon: "Paintbrush" },
+    ],
   },
   {
     id: 2,
@@ -144,8 +140,8 @@ const skills: SkillItems[] = [
       { name: "C", level: 80, icon: "Terminal" },
       { name: "Python", level: 85, icon: "Code" },
       { name: "JavaScript", level: 88, icon: "Braces" },
-      { name: "Bash", level: 75, icon: "Shell" }
-    ]
+      { name: "Bash", level: 75, icon: "Shell" },
+    ],
   },
   {
     id: 3,
@@ -154,8 +150,8 @@ const skills: SkillItems[] = [
       { name: "Git & GitHub", level: 85, icon: "GitBranch" },
       { name: "Linux/Unix", level: 80, icon: "Database" },
       { name: "MS Office", level: 90, icon: "FileText" },
-      { name: "VirtualBox", level: 75, icon: "HardDrive" }
-    ]
+      { name: "VirtualBox", level: 75, icon: "HardDrive" },
+    ],
   },
   {
     id: 4,
@@ -163,51 +159,55 @@ const skills: SkillItems[] = [
     items: [
       { name: "Solidity", level: 65, icon: "Link" },
       { name: "Ethereum", level: 60, icon: "Coins" },
-      { name: "Smart Contracts", level: 65, icon: "FileCode2" }
-    ]
-  }
+      { name: "Smart Contracts", level: 65, icon: "FileCode2" },
+    ],
+  },
 ];
 
 const projects: Projects[] = [
   {
     id: 1,
     title: "E-Commerce Platform",
-    description: "A full-featured e-commerce platform built with React and TailwindCSS, featuring product catalog, shopping cart, and checkout functionality.",
+    description:
+      "A full-featured e-commerce platform built with React and TailwindCSS, featuring product catalog, shopping cart, and checkout functionality.",
     image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80",
     technologies: ["React", "TailwindCSS", "JavaScript"],
     liveUrl: "#",
     githubUrl: "#",
-    featured: true
+    featured: true,
   },
   {
     id: 2,
     title: "Task Management System",
-    description: "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
+    description:
+      "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
     technologies: ["Next.js", "TypeScript", "React"],
     liveUrl: "#",
     githubUrl: "#",
-    featured: true
+    featured: true,
   },
   {
     id: 3,
     title: "Portfolio Website Builder",
-    description: "A dynamic portfolio builder that allows users to create stunning portfolio websites with pre-built components and customization options.",
+    description:
+      "A dynamic portfolio builder that allows users to create stunning portfolio websites with pre-built components and customization options.",
     image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80",
     technologies: ["React", "CSS3", "JavaScript"],
     liveUrl: "#",
     githubUrl: "#",
-    featured: false
+    featured: false,
   },
   {
     id: 4,
-    title: "Blockchain Voting System",
-    description: "A decentralized voting application built on Ethereum, ensuring transparent and tamper-proof voting records using smart contracts.",
+    title: "Raznof Power Solution — Corporate Landing Experience",
+    description:
+      "A fully responsive corporate website developed for Raznof Power Solution, a company specializing in solar energy systems, UPS installation, surveillance cameras, electric fencing, and electrical safety solutions. The project combines modern UI design, optimized performance, and structured content architecture to deliver a professional digital experience.",
     image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&q=80",
-    technologies: ["Solidity", "Ethereum", "Web3.js"],
-    liveUrl: "#",
+    technologies: ["NextJs", "TailwindcCSS", "Framer-motion"],
+    liveUrl: "raznof-noik.vercel.app",
     githubUrl: "#",
-    featured: true
+    featured: true,
   },
   {
     id: 5,
@@ -217,7 +217,7 @@ const projects: Projects[] = [
     technologies: ["React", "APIs", "JavaScript"],
     liveUrl: "#",
     githubUrl: "#",
-    featured: false
+    featured: false,
   },
   {
     id: 6,
@@ -227,45 +227,49 @@ const projects: Projects[] = [
     technologies: ["Python", "C", "Bash"],
     liveUrl: "#",
     githubUrl: "#",
-    featured: false
+    featured: false,
   },
   {
     id: 7,
     title: "Apple Landing Page Clone",
-    description: "A visually appealing clone of the Apple landing page, built with React and TailwindCSS, showcasing responsive design and animations.",
+    description:
+      "A visually appealing clone of the Apple landing page, built with React and TailwindCSS, showcasing responsive design and animations.",
     image: "https://images.unsplash.com/photo-1612832021080-1f3e5b8c9f1d?w=800&q=80",
     technologies: ["React", "TailwindCSS", "JavaScript"],
     liveUrl: "https://gsap-macbook-landing-iota-five.vercel.app/",
     githubUrl: "https://github.com/NeoMemb/gsap_macbook_landing/",
-    featured: true
-  }
+    featured: true,
+  },
 ];
 
-export const experience:  Experience[] = [
+export const experience: Experience[] = [
   {
     id: 1,
     title: "Front-End Developer",
     company: "ALX Africa",
     period: "2024 - Present",
-    description: "Learning and building modern web applications using React, JavaScript, and industry-standard tools. Focus on responsive design and user experience.",
-    current: true
+    description:
+      "Learning and building modern web applications using React, JavaScript, and industry-standard tools. Focus on responsive design and user experience.",
+    current: true,
   },
   {
     id: 2,
     title: "Blockchain Developer",
     company: "Self-Learning",
     period: "2024 - Present",
-    description: "Studying Solidity for smart contract development and gaining understanding of Ethereum-based applications. Exploring DeFi and Web3 technologies.",
-    current: true
+    description:
+      "Studying Solidity for smart contract development and gaining understanding of Ethereum-based applications. Exploring DeFi and Web3 technologies.",
+    current: true,
   },
   {
     id: 3,
     title: "Software Developer",
     company: "Personal Projects",
     period: "2023 - Present",
-    description: "Building various applications using C, Python, and JavaScript. Focus on low-level programming concepts and system automation.",
-    current: false
-  }
+    description:
+      "Building various applications using C, Python, and JavaScript. Focus on low-level programming concepts and system automation.",
+    current: false,
+  },
 ];
 
 export const education = [
@@ -274,15 +278,16 @@ export const education = [
     degree: "Front-End Development Program",
     institution: "ALX Africa",
     period: "2024 - Present",
-    description: "Comprehensive program covering modern web development technologies, focusing on React, JavaScript, and industry best practices."
+    description:
+      "Comprehensive program covering modern web development technologies, focusing on React, JavaScript, and industry best practices.",
   },
   {
     id: 2,
     degree: "Self-Taught Developer",
     institution: "Various Online Platforms",
     period: "2022 - Present",
-    description: "Continuous learning through various platforms covering C, Python, JavaScript, Linux systems, and blockchain development."
-  }
-]
+    description: "Continuous learning through various platforms covering C, Python, JavaScript, Linux systems, and blockchain development.",
+  },
+];
 
-export  { links, skills, details, photos, personalInfo, projects,  };
+export { links, skills, details, photos, personalInfo, projects };
