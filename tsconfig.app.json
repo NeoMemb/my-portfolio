@@ -6,9 +6,10 @@
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
-    "baseUrl": ".",
+    // "baseUrl": ".",
     "paths": {
-      "@/*": [ "./src/*" ]
+      "@app/*": ["./src/app/*"],
+      "@lib/*": ["./src/lib/*"]
     },
     /* Bundler mode */
     "moduleResolution": "bundler",
