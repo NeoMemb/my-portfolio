@@ -5,8 +5,6 @@ import { Download, Mail } from 'lucide-react';
 import { personalInfo, links, photos } from '../data/portfolio';
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 import { FaXTwitter } from "react-icons/fa6"
-import "../styles/glassmorphism.css";
-import "../index.css";
 
 const Hero = () => {
   const handleDownloadResume = () => {
@@ -22,7 +20,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen relative overflow-hidden bg-gradient-to-br from-[var(--bg-primary)] via-[var(--bg-secondary)] to-[var(--bg-tertiary)]">
+    <section id="home" className="min-h-screen relative overflow-hidden bg-gradient-to-br from-surface-1 via-surface-2 to-surface-3">
       {/* Geometric Background Pattern */}
       <div className="absolute inset-0 hexagon-pattern opacity-30"></div>
       
@@ -31,7 +29,7 @@ const Hero = () => {
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 rounded-full bg-cyan-400"
+            className="absolute w-2 h-2 rounded-full bg-brand"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -72,12 +70,12 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-5xl md:text-7xl font-bold text-white"
+              className="text-5xl md:text-7xl font-bold text-fg"
             >
               <span className="neon-text">{personalInfo.name}</span>
             </motion.h1>
 
-            <div className="text-2xl md:text-4xl text-gray-300 h-20">
+            <div className="text-2xl md:text-4xl text-fg-secondary h-20">
               <TypeAnimation
                 sequence={[
                   'Front-End Developer',
@@ -99,7 +97,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="text-gray-400 text-lg md:text-xl max-w-2xl leading-relaxed"
+              className="text-fg-muted text-lg md:text-xl max-w-2xl leading-relaxed"
             >
               {personalInfo.tagline}
             </motion.p>
@@ -119,7 +117,7 @@ const Hero = () => {
                 whileHover={{ scale: 1.1, y: -3 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <FiGithub className="w-6 h-6 text-cyan-400" />
+                <FiGithub className="w-6 h-6 text-brand" />
               </motion.a>
               <motion.a
                 href={links.social[1].url}
@@ -129,7 +127,7 @@ const Hero = () => {
                 whileHover={{ scale: 1.1, y: -3 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <FiLinkedin className="w-6 h-6 text-cyan-400" />
+                <FiLinkedin className="w-6 h-6 text-brand" />
               </motion.a>
               <motion.a
                 href={links.social[2].url}
@@ -139,7 +137,7 @@ const Hero = () => {
                 whileHover={{ scale: 1.1, y: -3 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <FaXTwitter className="w-6 h-6 text-cyan-400" />
+                <FaXTwitter className="w-6 h-6 text-brand" />
               </motion.a>
             </motion.div>
 
@@ -152,7 +150,7 @@ const Hero = () => {
             >
               <motion.button
                 onClick={handleContactClick}
-                className="px-8 py-4 bg-cyan-500 text-white rounded-lg font-semibold hover:bg-cyan-600 transition-all duration-300 flex items-center justify-center space-x-2 neon-glow"
+                className="px-8 py-4 bg-brand-fill text-brand-contrast rounded-lg font-semibold hover:bg-brand-strong transition-all duration-300 flex items-center justify-center space-x-2 neon-glow"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -193,7 +191,7 @@ const Hero = () => {
               <div className="absolute inset-0 rounded-full neon-glow-intense blur-3xl opacity-30"></div>
               
               {/* Profile Image */}
-              <div className="relative w-64 h-64 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-cyan-400 neon-glow">
+              <div className="relative w-64 h-64 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-brand neon-glow">
                 <img
                   src={photos.dark.dp}
                   alt={photos.dark.alt}
@@ -203,7 +201,7 @@ const Hero = () => {
 
               {/* Geometric Decorations */}
               <motion.div
-                className="absolute -top-10 -right-10 w-20 h-20 border-4 border-cyan-400 rotate-45"
+                className="absolute -top-10 -right-10 w-20 h-20 border-4 border-brand rotate-45"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               />
@@ -223,9 +221,9 @@ const Hero = () => {
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 1.5, repeat: Infinity }}
       >
-        <div className="w-6 h-10 border-2 border-cyan-400 rounded-full flex justify-center">
+        <div className="w-6 h-10 border-2 border-brand rounded-full flex justify-center">
           <motion.div
-            className="w-1.5 h-3 bg-cyan-400 rounded-full mt-2"
+            className="w-1.5 h-3 bg-brand rounded-full mt-2"
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           />

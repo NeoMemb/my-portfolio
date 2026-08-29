@@ -6,6 +6,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ArioriDev</title>
+    <script>
+      // Resolve the theme before first paint, otherwise a returning visitor on
+      // dark sees a flash of light while Navigation's effect catches up.
+      // Keep in sync with applyTheme() in src/components/Navigation.tsx.
+      (function () {
+        var root = document.documentElement;
+        var resolved = 'light';
+        try {
+          var saved = localStorage.getItem('theme') || 'light';
+          resolved =
+            saved === 'system'
+              ? window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark'
+                : 'light'
+              : saved;
+        } catch (e) {
+          /* localStorage unavailable (private mode) — fall back to light */
+        }
+        root.classList.toggle('dark', resolved === 'dark');
+        root.classList.toggle('light', resolved === 'light');
+        root.setAttribute('data-theme', resolved);
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

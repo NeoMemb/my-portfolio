@@ -48,14 +48,14 @@ const Experience = () => {
       className="relative pl-8 pb-8 last:pb-0"
     >
       {/* Timeline Line */}
-      <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-500 to-blue-600"></div>
+      <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-brand-fill to-blue-600"></div>
       
       {/* Timeline Dot */}
       <motion.div
         initial={{ scale: 0 }}
         animate={inView ? { scale: 1 } : { scale: 0 }}
         transition={{ delay: index * 0.2 }}
-        className="absolute left-0 top-2 w-4 h-4 -ml-[7.5px] rounded-full bg-cyan-500 neon-glow"
+        className="absolute left-0 top-2 w-4 h-4 -ml-[7.5px] rounded-full bg-brand-fill neon-glow"
       />
 
       {/* Content Card */}
@@ -65,27 +65,27 @@ const Experience = () => {
       >
         <div className="flex items-start justify-between mb-4">
           <div className="flex items-center space-x-3">
-            <div className="p-2 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 neon-glow">
+            <div className="p-2 rounded-lg bg-gradient-to-br from-brand-fill to-blue-600 neon-glow">
               <Icon className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-white">{item.title || item.degree}</h3>
-              <p className="text-cyan-400">{item.company || item.institution}</p>
+              <h3 className="text-xl font-bold text-fg">{item.title || item.degree}</h3>
+              <p className="text-brand">{item.company || item.institution}</p>
             </div>
           </div>
           {item.current && (
-            <span className="px-3 py-1 bg-green-500/20 text-green-400 text-xs rounded-full border border-green-500/30">
+            <span className="px-3 py-1 bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 text-xs rounded-full border border-emerald-500/30">
               Current
             </span>
           )}
         </div>
         
-        <div className="flex items-center space-x-2 text-gray-400 text-sm mb-3">
+        <div className="flex items-center space-x-2 text-fg-muted text-sm mb-3">
           <Calendar className="w-4 h-4" />
           <span>{item.period}</span>
         </div>
         
-        <p className="text-gray-300 leading-relaxed">
+        <p className="text-fg-secondary leading-relaxed">
           {item.description}
         </p>
       </motion.div>
@@ -93,7 +93,7 @@ const Experience = () => {
   );
 
   return (
-    <section id="experience" className="py-20 relative overflow-hidden bg-gradient-to-br from-[#050816] via-[#0a0e27] to-[#1a1f3a]">
+    <section id="experience" className="py-20 relative overflow-hidden bg-gradient-to-br from-surface-1 via-surface-2 to-surface-3">
       <div className="absolute inset-0 hexagon-pattern opacity-20"></div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10" ref={ref}>
@@ -108,7 +108,7 @@ const Experience = () => {
             <h2 className="text-4xl md:text-6xl font-bold mb-4">
               <span className="gradient-text">Experience & Education</span>
             </h2>
-            <p className="text-gray-400 text-lg">My professional journey</p>
+            <p className="text-fg-muted text-lg">My professional journey</p>
           </motion.div>
 
           {/* Tabs */}
@@ -116,14 +116,14 @@ const Experience = () => {
             <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 glass rounded-xl p-1 bg-transparent my-auto">
               <TabsTrigger 
                 value="experience"
-                className="rounded-lg transition-all duration-300 data-[state=active]:!bg-cyan-500 data-[state=active]:!text-white text-gray-400 align-centent"
+                className="rounded-lg transition-all duration-300 data-[state=active]:!bg-brand-fill data-[state=active]:!text-brand-contrast text-fg-muted align-centent"
               >
                 <Briefcase className="w-4 h-4 mr-2" />
                 Experience
               </TabsTrigger>
               <TabsTrigger 
                 value="education"
-                className="rounded-lg transition-all duration-300 data-[state=active]:!bg-cyan-500 data-[state=active]:!text-white text-gray-400"
+                className="rounded-lg transition-all duration-300 data-[state=active]:!bg-brand-fill data-[state=active]:!text-brand-contrast text-fg-muted"
               >
                 <GraduationCap className="w-4 h-4 mr-2" />
                 Education

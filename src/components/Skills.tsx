@@ -31,7 +31,7 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-20 relative overflow-hidden bg-gradient-to-br from-[#050816] via-[#0a0e27] to-[#1a1f3a]">
+    <section id="skills" className="py-20 relative overflow-hidden bg-gradient-to-br from-surface-1 via-surface-2 to-surface-3">
       <div className="absolute inset-0 hexagon-pattern opacity-20"></div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10" ref={ref}>
@@ -46,7 +46,7 @@ const Skills = () => {
             <h2 className="text-4xl md:text-6xl font-bold mb-4">
               <span className="gradient-text">My Skills</span>
             </h2>
-            <p className="text-gray-400 text-lg">Technologies and tools I work with</p>
+            <p className="text-fg-muted text-lg">Technologies and tools I work with</p>
           </motion.div>
 
           {/* Skills Grid */}
@@ -57,7 +57,7 @@ const Skills = () => {
                 variants={itemVariants}
                 className="glass rounded-2xl p-8 space-y-6 card-lift"
               >
-                <h3 className="text-2xl font-bold text-cyan-400 mb-6">
+                <h3 className="text-2xl font-bold text-brand mb-6">
                   {skillCategory.category}
                 </h3>
                 <div className="space-y-6">
@@ -73,21 +73,21 @@ const Skills = () => {
                       >
                         <div className="flex items-center justify-between">
                           <div className="flex items-center space-x-3">
-                            <div className="p-2 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 neon-glow">
+                            <div className="p-2 rounded-lg bg-gradient-to-br from-brand-fill to-blue-600 neon-glow">
                               <Icon className="w-5 h-5 text-white" />
                             </div>
-                            <span className="text-white font-medium">{skill.name}</span>
+                            <span className="text-fg font-medium">{skill.name}</span>
                           </div>
-                          <span className="text-cyan-400 font-semibold">{skill.level}%</span>
+                          <span className="text-brand font-semibold">{skill.level}%</span>
                         </div>
-                        <div className="relative h-2 bg-gray-700 rounded-full overflow-hidden">
+                        <div className="relative h-2 bg-track rounded-full overflow-hidden">
                           <motion.div
                             initial={{ width: 0 }}
                             animate={inView ? { width: `${skill.level}%` } : { width: 0 }}
                             transition={{ duration: 1, delay: categoryIndex * 0.1 + index * 0.05 }}
-                            className="absolute top-0 left-0 h-full bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full"
+                            className="absolute top-0 left-0 h-full bg-gradient-to-r from-brand-fill to-blue-600 rounded-full"
                             style={{
-                              boxShadow: '0 0 10px rgba(0, 212, 255, 0.6)'
+                              boxShadow: 'var(--glow)'
                             }}
                           />
                         </div>
@@ -104,7 +104,7 @@ const Skills = () => {
             variants={itemVariants}
             className="glass rounded-2xl p-8"
           >
-            <h3 className="text-2xl font-bold text-cyan-400 mb-6 text-center">Additional Expertise</h3>
+            <h3 className="text-2xl font-bold text-brand mb-6 text-center">Additional Expertise</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
                 'Responsive Design',
@@ -119,9 +119,9 @@ const Skills = () => {
                 <motion.div
                   key={index}
                   whileHover={{ scale: 1.05 }}
-                  className="glass rounded-lg p-4 text-center border-l-4 border-cyan-400 hover:neon-glow transition-all duration-300"
+                  className="glass rounded-lg p-4 text-center border-l-4 border-brand hover:neon-glow transition-all duration-300"
                 >
-                  <p className="text-gray-300 font-medium text-sm">{item}</p>
+                  <p className="text-fg-secondary font-medium text-sm">{item}</p>
                 </motion.div>
               ))}
             </div>

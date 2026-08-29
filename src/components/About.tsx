@@ -53,7 +53,7 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="py-20 relative overflow-hidden bg-gradient-to-br from-[#0a0e27] to-[#050816]">
+    <section id="about" className="py-20 relative overflow-hidden bg-gradient-to-br from-surface-2 to-surface-1">
       {/* Background Pattern */}
       <div className="absolute inset-0 geometric-bg opacity-20"></div>
 
@@ -69,7 +69,7 @@ const About = () => {
             <h2 className="text-4xl md:text-6xl font-bold mb-4">
               <span className="gradient-text">About Me</span>
             </h2>
-            <p className="text-gray-400 text-lg">Get to know more about who I am</p>
+            <p className="text-fg-muted text-lg">Get to know more about who I am</p>
           </motion.div>
 
           {/* Main Content */}
@@ -77,22 +77,22 @@ const About = () => {
             {/* Bio Section */}
             <motion.div variants={itemVariants} className="space-y-6">
               <div className="glass rounded-2xl p-8 space-y-4">
-                <h3 className="text-2xl font-bold text-cyan-400 mb-4">My Journey</h3>
-                <p className="text-gray-300 leading-relaxed text-lg">
+                <h3 className="text-2xl font-bold text-brand mb-4">My Journey</h3>
+                <p className="text-fg-secondary leading-relaxed text-lg">
                   {personalInfo.description}
                 </p>
                 <div className="pt-4 space-y-2">
                   <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-                    <span className="text-gray-400">Location: <span className="text-white">{personalInfo.location}</span></span>
+                    <div className="w-2 h-2 bg-brand rounded-full"></div>
+                    <span className="text-fg-muted">Location: <span className="text-fg">{personalInfo.location}</span></span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-                    <span className="text-gray-400">Email: <span className="text-white">{links.contacts[0].value}</span></span>
+                    <div className="w-2 h-2 bg-brand rounded-full"></div>
+                    <span className="text-fg-muted">Email: <span className="text-fg">{links.contacts[0].value}</span></span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-                    <span className="text-gray-400">Status: <span className="text-green-400">Available for opportunities</span></span>
+                    <div className="w-2 h-2 bg-brand rounded-full"></div>
+                    <span className="text-fg-muted">Status: <span className="text-emerald-600 dark:text-emerald-400">Available for opportunities</span></span>
                   </div>
                 </div>
               </div>
@@ -113,11 +113,11 @@ const About = () => {
                     className="glass rounded-xl p-6 space-y-3 card-lift cursor-pointer"
                     id="about"
                   >
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center neon-glow">
+                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-brand-fill to-blue-600 flex items-center justify-center neon-glow">
                       <Icon className="w-6 h-6 text-white" />
                     </div>
-                    <h4 className="text-xl font-semibold text-white">{highlight.title}</h4>
-                    <p className="text-gray-400 text-sm leading-relaxed">{highlight.description}</p>
+                    <h4 className="text-xl font-semibold text-fg">{highlight.title}</h4>
+                    <p className="text-fg-muted text-sm leading-relaxed">{highlight.description}</p>
                   </motion.div>
                 );
               })}
@@ -132,36 +132,36 @@ const About = () => {
             <div className="grid md:grid-cols-3 gap-8 text-center">
               <div className="space-y-2">
                 <motion.h4
-                  className="text-4xl font-bold text-cyan-400"
+                  className="text-4xl font-bold text-brand"
                   initial={{ scale: 0 }}
                   animate={inView ? { scale: 1 } : { scale: 0 }}
                   transition={{ delay: 0.5, type: 'spring' }}
                 >
                   15+
                 </motion.h4>
-                <p className="text-gray-400">Technologies</p>
+                <p className="text-fg-muted">Technologies</p>
               </div>
               <div className="space-y-2">
                 <motion.h4
-                  className="text-4xl font-bold text-cyan-400"
+                  className="text-4xl font-bold text-brand"
                   initial={{ scale: 0 }}
                   animate={inView ? { scale: 1 } : { scale: 0 }}
                   transition={{ delay: 0.6, type: 'spring' }}
                 >
                   10+
                 </motion.h4>
-                <p className="text-gray-400">Projects Completed</p>
+                <p className="text-fg-muted">Projects Completed</p>
               </div>
               <div className="space-y-2">
                 <motion.h4
-                  className="text-4xl font-bold text-cyan-400"
+                  className="text-4xl font-bold text-brand"
                   initial={{ scale: 0 }}
                   animate={inView ? { scale: 1 } : { scale: 0 }}
                   transition={{ delay: 0.7, type: 'spring' }}
                 >
                   2+
                 </motion.h4>
-                <p className="text-gray-400">Years Learning</p>
+                <p className="text-fg-muted">Years Learning</p>
               </div>
             </div>
           </motion.div>

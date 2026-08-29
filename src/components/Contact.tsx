@@ -100,7 +100,7 @@ const socialLinks: {
 }))
 
   return (
-    <section id="contact" className="py-20 relative overflow-hidden bg-gradient-to-br from-[#0a0e27] to-[#050816]">
+    <section id="contact" className="py-20 relative overflow-hidden bg-gradient-to-br from-surface-2 to-surface-1">
       <div className="absolute inset-0 geometric-bg opacity-20"></div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10" ref={ref}>
@@ -115,7 +115,7 @@ const socialLinks: {
             <h2 className="text-4xl md:text-6xl font-bold mb-4">
               <span className="gradient-text">Get In Touch</span>
             </h2>
-            <p className="text-gray-400 text-lg">Let's work together on your next project</p>
+            <p className="text-fg-muted text-lg">Let's work together on your next project</p>
           </motion.div>
 
           <div className="grid lg:grid-cols-5 gap-8 max-w-6xl mx-auto">
@@ -132,20 +132,20 @@ const socialLinks: {
                       className="glass rounded-xl p-6 card-lift"
                     >
                       <div className="flex items-start space-x-4">
-                        <div className="p-3 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 neon-glow">
+                        <div className="p-3 rounded-lg bg-gradient-to-br from-brand-fill to-blue-600 neon-glow">
                           <Icon className="w-6 h-6 text-white" />
                         </div>
                         <div>
-                          <h3 className="text-gray-400 text-sm mb-1">{info.label}</h3>
+                          <h3 className="text-fg-muted text-sm mb-1">{info.label}</h3>
                           {info.link ? (
                             <a
                               href={info.link}
-                              className="text-white font-medium hover:text-cyan-400 transition-colors"
+                              className="text-fg font-medium hover:text-brand transition-colors"
                             >
                               {info.value}
                             </a>
                           ) : (
-                            <p className="text-white font-medium">{info.value}</p>
+                            <p className="text-fg font-medium">{info.value}</p>
                           )}
                         </div>
                       </div>
@@ -156,7 +156,7 @@ const socialLinks: {
 
               {/* Social Links */}
               <div className="glass rounded-xl p-6">
-                <h3 className="text-xl font-bold text-white mb-4">Connect With Me</h3>
+                <h3 className="text-xl font-bold text-fg mb-4">Connect With Me</h3>
                 <div className="flex space-x-4">
                   {socialLinks.map((social, index) => {
                     const Icon = social.icon;
@@ -171,7 +171,7 @@ const socialLinks: {
                         whileTap={{ scale: 0.95 }}
                         title={social.label}
                       >
-                        <Icon className="w-6 h-6 text-cyan-400" />
+                        <Icon className="w-6 h-6 text-brand" />
                       </motion.a>
                     );
                   })}
@@ -188,7 +188,7 @@ const socialLinks: {
                   repeat: Infinity,
                   ease: "linear",
                 }}
-                className="hidden lg:block w-32 h-32 mx-auto mt-8 border-4 border-cyan-400 rounded-lg rotate-45 opacity-30"
+                className="hidden lg:block w-32 h-32 mx-auto mt-8 border-4 border-brand rounded-lg rotate-45 opacity-30"
               />
             </motion.div>
 
@@ -197,7 +197,7 @@ const socialLinks: {
               <form onSubmit={handleSubmit} className="glass rounded-2xl p-8 space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label htmlFor="name" className="text-gray-300 text-sm font-medium">
+                    <label htmlFor="name" className="text-fg-secondary text-sm font-medium">
                       Your Name
                     </label>
                     <input
@@ -207,12 +207,12 @@ const socialLinks: {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 glass rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all duration-300"
+                      className="w-full px-4 py-3 glass rounded-lg text-fg placeholder:text-fg-muted focus:outline-none focus:ring-2 focus:ring-brand transition-all duration-300"
                       placeholder="John Doe"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="email" className="text-gray-300 text-sm font-medium">
+                    <label htmlFor="email" className="text-fg-secondary text-sm font-medium">
                       Your Email
                     </label>
                     <input
@@ -222,14 +222,14 @@ const socialLinks: {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 glass rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all duration-300"
+                      className="w-full px-4 py-3 glass rounded-lg text-fg placeholder:text-fg-muted focus:outline-none focus:ring-2 focus:ring-brand transition-all duration-300"
                       placeholder="john@example.com"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="subject" className="text-gray-300 text-sm font-medium">
+                  <label htmlFor="subject" className="text-fg-secondary text-sm font-medium">
                     Subject
                   </label>
                   <input
@@ -239,13 +239,13 @@ const socialLinks: {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 glass rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all duration-300"
+                    className="w-full px-4 py-3 glass rounded-lg text-fg placeholder:text-fg-muted focus:outline-none focus:ring-2 focus:ring-brand transition-all duration-300"
                     placeholder="Project Inquiry"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-gray-300 text-sm font-medium">
+                  <label htmlFor="message" className="text-fg-secondary text-sm font-medium">
                     Message
                   </label>
                   <textarea
@@ -255,7 +255,7 @@ const socialLinks: {
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 glass rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all duration-300 resize-none"
+                    className="w-full px-4 py-3 glass rounded-lg text-fg placeholder:text-fg-muted focus:outline-none focus:ring-2 focus:ring-brand transition-all duration-300 resize-none"
                     placeholder="Tell me about your project..."
                   />
                 </div>
@@ -263,7 +263,7 @@ const socialLinks: {
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 flex items-center justify-center space-x-2 neon-glow disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full px-8 py-4 bg-gradient-to-r from-brand-fill to-blue-600 text-brand-contrast rounded-lg font-semibold hover:from-brand-strong hover:to-blue-700 transition-all duration-300 flex items-center justify-center space-x-2 neon-glow disabled:opacity-50 disabled:cursor-not-allowed"
                   whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                   whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                 >
