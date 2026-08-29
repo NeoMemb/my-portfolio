@@ -17,7 +17,7 @@ const App = () => {
   // console.log(photos.dark.dp);
   
   return (
-    <div className="App bg-[#050816] text-white min-h-screen">
+    <div className="App bg-surface-1 text-fg min-h-screen">
       {/* Header */}
       <header>
         <Navigation />

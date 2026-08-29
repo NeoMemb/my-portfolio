@@ -39,7 +39,7 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 relative overflow-hidden bg-gradient-to-br from-[#0a0e27] to-[#050816]">
+    <section id="projects" className="py-20 relative overflow-hidden bg-gradient-to-br from-surface-2 to-surface-1">
       <div className="absolute inset-0 geometric-bg opacity-20"></div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10" ref={ref}>
@@ -54,7 +54,7 @@ const Projects = () => {
             <h2 className="text-4xl md:text-6xl font-bold mb-4">
               <span className="gradient-text">My Projects</span>
             </h2>
-            <p className="text-gray-400 text-lg mb-8">Showcasing my best work</p>
+            <p className="text-fg-muted text-lg mb-8">Showcasing my best work</p>
             
             {/* Filter Buttons */}
             <div className="flex justify-center space-x-4">
@@ -64,8 +64,8 @@ const Projects = () => {
                   onClick={() => setFilter(filterOption)}
                   className={`px-6 py-2 rounded-lg font-medium transition-all duration-300 ${
                     filter === filterOption
-                      ? 'bg-cyan-500 text-white neon-glow'
-                      : 'glass text-gray-300 hover:text-white'
+                      ? 'bg-brand-fill text-brand-contrast neon-glow'
+                      : 'glass text-fg-secondary hover:text-fg'
                   }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -95,15 +95,16 @@ const Projects = () => {
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#050816] via-transparent to-transparent opacity-60"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-scrim via-transparent to-transparent opacity-60"></div>
                   {project.featured && (
-                    <div className="absolute top-4 right-4 bg-cyan-500 text-white px-3 py-1 rounded-full text-xs font-semibold neon-glow">
+                    <div className="absolute top-4 right-4 bg-brand-fill text-brand-contrast px-3 py-1 rounded-full text-xs font-semibold neon-glow">
                       Featured
                     </div>
                   )}
-                  
-                  {/* Overlay Links */}
-                  <div className="absolute inset-0 bg-black bg-opacity-80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
+
+                  {/* Overlay Links — the overlay dims the artwork in both themes,
+                      so the controls on it stay light-on-dark regardless of theme */}
+                  <div className="absolute inset-0 bg-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
                     <motion.a
                       href={project.liveUrl}
                       target="_blank"
@@ -129,19 +130,19 @@ const Projects = () => {
 
                 {/* Project Info */}
                 <div className="p-6 space-y-4">
-                  <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+                  <h3 className="text-xl font-bold text-fg group-hover:text-brand transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">
+                  <p className="text-fg-muted text-sm leading-relaxed">
                     {project.description}
                   </p>
-                  
+
                   {/* Technologies */}
                   <div className="flex flex-wrap gap-2 pt-2">
                     {project.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-3 py-1 bg-gradient-to-r from-cyan-900 to-blue-900 text-cyan-300 text-xs rounded-full border border-cyan-500/30"
+                        className="px-3 py-1 bg-brand/10 text-brand text-xs rounded-full border border-brand/30"
                       >
                         {tech}
                       </span>
@@ -150,7 +151,7 @@ const Projects = () => {
                 </div>
 
                 {/* Geometric Corner Decoration */}
-                <div className="absolute top-0 right-0 w-16 h-16 border-r-4 border-t-4 border-cyan-400 opacity-20 group-hover:opacity-100 transition-opacity"></div>
+                <div className="absolute top-0 right-0 w-16 h-16 border-r-4 border-t-4 border-brand opacity-20 group-hover:opacity-100 transition-opacity"></div>
               </motion.div>
             ))}
           </motion.div>
@@ -168,9 +169,9 @@ const Projects = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Code className="w-5 h-5 text-cyan-400" />
+              <Code className="w-5 h-5 text-brand" />
               <span className="font-semibold">View All Projects on GitHub</span>
-              <ExternalLink className="w-4 h-4 text-cyan-400 group-hover:translate-x-1 transition-transform" />
+              <ExternalLink className="w-4 h-4 text-brand group-hover:translate-x-1 transition-transform" />
             </motion.a>
           </motion.div>
         </motion.div>

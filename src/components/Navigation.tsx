@@ -6,7 +6,7 @@ import { links, personalInfo } from "../data/portfolio"
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState('light');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,25 +18,39 @@ const Navigation = () => {
   }, []);
 
   useEffect(() => {
-    // Get saved theme or system preference
-    const savedTheme = localStorage.getItem('theme') || 'system';
+    // Light is the default for anyone who hasn't picked a theme yet
+    const savedTheme = localStorage.getItem('theme') || 'light';
     setTheme(savedTheme);
     applyTheme(savedTheme);
   }, []);
 
+  // While on 'system', follow the OS if the user flips it mid-visit
+  useEffect(() => {
+    if (theme !== 'system') return;
+
+    const media = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = () => applyTheme('system');
+
+    media.addEventListener('change', handleChange);
+    return () => media.removeEventListener('change', handleChange);
+  }, [theme]);
+
   const applyTheme = (newTheme: string) => {
-    if (newTheme === 'system') {
-      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      document.documentElement.classList.toggle('dark', systemPrefersDark);
-      document.documentElement.classList.toggle('light', !systemPrefersDark);
-    } else {
-      document.documentElement.classList.toggle('dark', newTheme === 'dark');
-      document.documentElement.classList.toggle('light', newTheme === 'light');
-    }
+    const root = document.documentElement;
+    const resolvedTheme =
+      newTheme === 'system'
+        ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          ? 'dark'
+          : 'light'
+        : newTheme;
+
+    root.classList.toggle('dark', resolvedTheme === 'dark');
+    root.classList.toggle('light', resolvedTheme === 'light');
+    root.setAttribute('data-theme', resolvedTheme);
   };
 
   const toggleTheme = () => {
-    const themes = ['dark', 'light', 'system'];
+    const themes = ['light', 'dark', 'system'];
     const currentIndex = themes.indexOf(theme);
     const nextTheme = themes[(currentIndex + 1) % themes.length];
     setTheme(nextTheme);
@@ -45,9 +59,9 @@ const Navigation = () => {
   };
 
   const getThemeIcon = () => {
-    if (theme === 'dark') return <Moon className="w-5 h-5" />;
-    if (theme === 'light') return <Sun className="w-5 h-5" />;
-    return <Monitor className="w-5 h-5" />;
+    if (theme === 'dark') return <Moon className="w-5 h-5 text-color" />;
+    if (theme === 'light') return <Sun className="w-5 h-5 text-color" />;
+    return <Monitor className="w-5 h-5 text-color" />;
   };
 
   const handleLinkClick = (href: string) => {
@@ -88,11 +102,11 @@ const Navigation = () => {
                   e.preventDefault();
                   handleLinkClick(link.href);
                 }}
-                className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 relative group"
+                className="text-color hover:text-brand transition-colors duration-300 relative group"
                 whileHover={{ y: -2 }}
               >
                 {link.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand group-hover:w-full transition-all duration-300"></span>
               </motion.a>
             ))}
             
@@ -121,11 +135,11 @@ const Navigation = () => {
             
             <motion.button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white p-2"
+              className="text-fg p-2"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? <X className="w-6 h-6 text-color" /> : <Menu className="w-6 h-6 text-color" />}
             </motion.button>
           </div>
         </div>
@@ -149,7 +163,7 @@ const Navigation = () => {
                       e.preventDefault();
                       handleLinkClick(link.href);
                     }}
-                    className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 py-2"
+                    className="text-color hover:text-brand transition-colors duration-300 py-2"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}

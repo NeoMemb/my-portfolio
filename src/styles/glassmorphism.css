@@ -1,73 +1,162 @@
-/* Glassmorphism & Blue Neon Theme Styles */
+/* Glassmorphism & Blue Neon Theme Styles
 
+   Deliberately does NOT @import "tailwindcss" — index.css owns the single
+   Tailwind instance. A second instance here rebuilt every utility from
+   scratch, and because @custom-variant dark lives in index.css those copies
+   emitted dark: utilities with no condition at all, so they applied in light
+   theme too. Keep this file plain CSS. */
+
+/* ---------------------------------------------------------------------------
+   Theme tokens — the single source of truth for both themes.
+
+   Plain :root carries the LIGHT theme so colours are already correct on the
+   very first paint, before Navigation's effect sets data-theme on <html>.
+   Dark is layered on top via [data-theme="dark"] / .dark.
+   --------------------------------------------------------------------------- */
 :root {
-  /* Dark Theme Base */
-  --bg-primary: #050816;
-  --bg-secondary: #0a0e27;
-  --bg-tertiary: #1a1f3a;
-  
-  /* Neon Blue Accents */
-  --neon-blue: #00d4ff;
-  --neon-bright: #0ea5e9;
-  --neon-glow: rgba(0, 212, 255, 0.5);
-  
-  /* Blue Palette */
+  /* Blue Palette — hues are shared, they don't change per theme */
   --blue-400: #60a5fa;
   --blue-500: #3b82f6;
   --blue-600: #2563eb;
   --blue-700: #1d4ed8;
   --blue-800: #1e40af;
   --blue-900: #1e3a8a;
-  
+
+  /* Light Theme Base */
+  --bg-primary: #f8faff;
+  --bg-secondary: #eef3ff;
+  --bg-tertiary: #e6eeff;
+
   /* Glassmorphism */
-  --glass-bg: rgba(10, 14, 39, 0.4);
-  --glass-border: rgba(0, 212, 255, 0.2);
-  --glass-shadow: 0 8px 32px 0 rgba(0, 212, 255, 0.1);
-  
+  --glass-bg: #ffffffb3;
+  --glass-border: #0891b233;
+  --glass-shadow: 0 8px 32px 0 #0891b21a;
+  --glass-bg-hover: #ffffffd9;
+  --glass-border-hover: #0891b266;
+
+  /* Text — contrast against --bg-primary: 16:1 / 7.3:1 / 4.6:1 */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-i-am: #0f6b7a;
+
+  /* Brand accent. --brand tints text/icons/borders, --brand-fill backs solid
+     buttons and --brand-contrast is the text that sits on that fill.
+     Light uses cyan-700 (5.1:1 on --bg-primary); cyan-400 was 1.7:1. */
+  --brand: #0e7490;
+  --brand-fill: #0e7490;
+  --brand-strong: #155e75;
+  --brand-contrast: #ffffff;
+
+  /* Neon accents */
+  --neon-blue: #0891b2;
+  --neon-bright: #06b6d4;
+
+  /* Glows. A cyan halo over white reads as haze, so the light theme spends
+     these on soft drop shadows instead and drops the text glow entirely. */
+  --glow: 0 4px 20px #0e749026;
+  --glow-intense: 0 8px 32px #0e749040;
+  --text-glow: none;
+  --card-glow: 0 12px 40px #0e74901f;
+
+  /* Gradient used by .gradient-text */
+  --gradient-from: #0e7490;
+  --gradient-to: #1d4ed8;
+
+  /* Surfaces & decoration */
+  --pattern-line: #0e74901a;
+  --track: #cbd5e1;
+  --overlay: #0f172acc;
+  --img-scrim: #0f172a;
+  --border-subtle: #0891b21f;
+}
+
+:root[data-theme="dark"],
+:root.dark {
+  /* Dark Theme Base */
+  --bg-primary: #050816;
+  --bg-secondary: #0a0e27;
+  --bg-tertiary: #1a1f3a;
+
+  /* Glassmorphism */
+  --glass-bg: #0a0e2766;
+  --glass-border: #00d4ff33;
+  --glass-shadow: 0 8px 32px 0 #00d4ff1a;
+  --glass-bg-hover: #0a0e2799;
+  --glass-border-hover: #00d4ff66;
+
   /* Text */
   --text-primary: #ffffff;
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
+  --text-i-am: #26c6da;
+
+  /* Brand accent — matches the previous cyan-400/500/600 trio exactly */
+  --brand: #22d3ee;
+  --brand-fill: #06b6d4;
+  --brand-strong: #0891b2;
+  --brand-contrast: #ffffff;
+
+  /* Neon accents */
+  --neon-blue: #00d4ff;
+  --neon-bright: #0ea5e9;
+
+  /* Glows */
+  --glow: 0 0 10px #00d4ff80, 0 0 20px #00d4ff4d, 0 0 30px #00d4ff33;
+  --glow-intense: 0 0 15px #00d4ffcc, 0 0 30px #00d4ff99,
+    0 0 45px #00d4ff66, 0 0 60px #00d4ff33;
+  --text-glow: 0 0 10px #00d4ffcc, 0 0 20px #00d4ff99, 0 0 30px #00d4ff66;
+  --card-glow: 0 12px 40px #00d4ff40;
+
+  /* Gradient used by .gradient-text */
+  --gradient-from: #00d4ff;
+  --gradient-to: #3b82f6;
+
+  /* Surfaces & decoration */
+  --pattern-line: #00d4ff0d;
+  --track: #334155;
+  --overlay: #000000cc;
+  --img-scrim: #050816;
+  --border-subtle: #00d4ff1f;
+}
+
+/* Text Colors */
+.i-am {
+  color: var(--text-i-am);
 }
 
 /* Glass Effect Base */
 .glass {
-  background: rgba(10, 14, 39, 0.4);
+  background: var(--glass-bg);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 212, 255, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(0, 212, 255, 0.1);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.text-color {
+  color: var(--text-primary);
 }
 
 .glass-strong {
-  background: rgba(10, 14, 39, 0.7);
+  background: var(--glass-bg);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(0, 212, 255, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(0, 212, 255, 0.15);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
 }
 
 /* Neon Glow Effects */
 .neon-glow {
-  box-shadow: 
-    0 0 10px rgba(0, 212, 255, 0.5),
-    0 0 20px rgba(0, 212, 255, 0.3),
-    0 0 30px rgba(0, 212, 255, 0.2);
+  box-shadow: var(--glow);
 }
 
 .neon-glow-intense {
-  box-shadow: 
-    0 0 15px rgba(0, 212, 255, 0.8),
-    0 0 30px rgba(0, 212, 255, 0.6),
-    0 0 45px rgba(0, 212, 255, 0.4),
-    0 0 60px rgba(0, 212, 255, 0.2);
+  box-shadow: var(--glow-intense);
 }
 
 .neon-text {
-  text-shadow:
-    0 0 10px rgba(0, 212, 255, 0.8),
-    0 0 20px rgba(0, 212, 255, 0.6),
-    0 0 30px rgba(0, 212, 255, 0.4);
+  text-shadow: var(--text-glow);
 }
 
 /* Hover Effects */
@@ -76,27 +165,25 @@
 }
 
 .glass-hover:hover {
-  background: rgba(10, 14, 39, 0.6);
-  border-color: rgba(0, 212, 255, 0.4);
-  box-shadow: 
-    0 8px 32px 0 rgba(0, 212, 255, 0.2),
-    0 0 20px rgba(0, 212, 255, 0.3);
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-hover);
+  box-shadow: var(--glass-shadow), var(--glow);
   transform: translateY(-2px);
 }
 
 /* Geometric Patterns */
 .geometric-bg {
-  background-image: 
-    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+  background-image:
+    linear-gradient(var(--pattern-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--pattern-line) 1px, transparent 1px);
   background-size: 50px 50px;
 }
 
 .hexagon-pattern {
-  background-image: 
-    repeating-linear-gradient(60deg, transparent, transparent 50px, rgba(0, 212, 255, 0.05) 50px, rgba(0, 212, 255, 0.05) 51px),
-    repeating-linear-gradient(120deg, transparent, transparent 50px, rgba(0, 212, 255, 0.05) 50px, rgba(0, 212, 255, 0.05) 51px),
-    repeating-linear-gradient(240deg, transparent, transparent 50px, rgba(0, 212, 255, 0.05) 50px, rgba(0, 212, 255, 0.05) 51px);
+  background-image:
+    repeating-linear-gradient(60deg, transparent, transparent 50px, var(--pattern-line) 50px, var(--pattern-line) 51px),
+    repeating-linear-gradient(120deg, transparent, transparent 50px, var(--pattern-line) 50px, var(--pattern-line) 51px),
+    repeating-linear-gradient(240deg, transparent, transparent 50px, var(--pattern-line) 50px, var(--pattern-line) 51px);
 }
 
 /* Smooth Scrolling */
@@ -124,7 +211,7 @@ html {
 
 /* Gradient Text */
 .gradient-text {
-  background: linear-gradient(135deg, var(--neon-blue) 0%, var(--blue-500) 100%);
+  background: linear-gradient(135deg, var(--gradient-from) 0%, var(--gradient-to) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -137,16 +224,16 @@ html {
 
 .card-lift:hover {
   transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 12px 40px rgba(0, 212, 255, 0.25);
+  box-shadow: var(--card-glow);
 }
 
 /* Button Glow Animation */
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+    box-shadow: var(--glow);
   }
   50% {
-    box-shadow: 0 0 30px rgba(0, 212, 255, 0.8);
+    box-shadow: var(--glow-intense);
   }
 }
 
@@ -219,10 +306,10 @@ html {
 /* Border Animation */
 @keyframes border-flow {
   0%, 100% {
-    border-color: rgba(0, 212, 255, 0.3);
+    border-color: var(--glass-border);
   }
   50% {
-    border-color: rgba(0, 212, 255, 0.8);
+    border-color: var(--brand);
   }
 }
 
