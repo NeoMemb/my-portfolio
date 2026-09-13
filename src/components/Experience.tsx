@@ -1,178 +1,73 @@
-// import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { Briefcase, GraduationCap, Calendar, type LucideIcon } from 'lucide-react';
-import { experience, education } from '../data/portfolio';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
+"use client";
 
-const Experience = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+import { useState } from "react";
+import SectionHeading from "./SectionHeading";
+import { jobs } from "@/data/content";
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.5 },
-    },
-  };
-
-  const TimelineItem = ({ item, icon: Icon, index }: { item: {
-    id: number;
-    title?: string;
-    degree?: string;
-    company?: string;
-    institution?: string;
-    period: string;
-    description: string;
-    current?: Boolean;
-  }, icon: LucideIcon,
-     index: number}) => (
-    <motion.div
-      variants={itemVariants}
-      initial="hidden"
-      animate="visible"
-      className="relative pl-8 pb-8 last:pb-0"
-    >
-      {/* Timeline Line */}
-      <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-brand-fill to-blue-600"></div>
-      
-      {/* Timeline Dot */}
-      <motion.div
-        initial={{ scale: 0 }}
-        animate={inView ? { scale: 1 } : { scale: 0 }}
-        transition={{ delay: index * 0.2 }}
-        className="absolute left-0 top-2 w-4 h-4 -ml-[7.5px] rounded-full bg-brand-fill neon-glow"
-      />
-
-      {/* Content Card */}
-      <motion.div
-        whileHover={{ x: 5 }}
-        className="glass rounded-xl p-6 card-lift ml-4"
-      >
-        <div className="flex items-start justify-between mb-4">
-          <div className="flex items-center space-x-3">
-            <div className="p-2 rounded-lg bg-gradient-to-br from-brand-fill to-blue-600 neon-glow">
-              <Icon className="w-5 h-5 text-white" />
-            </div>
-            <div>
-              <h3 className="text-xl font-bold text-fg">{item.title || item.degree}</h3>
-              <p className="text-brand">{item.company || item.institution}</p>
-            </div>
-          </div>
-          {item.current && (
-            <span className="px-3 py-1 bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 text-xs rounded-full border border-emerald-500/30">
-              Current
-            </span>
-          )}
-        </div>
-        
-        <div className="flex items-center space-x-2 text-fg-muted text-sm mb-3">
-          <Calendar className="w-4 h-4" />
-          <span>{item.period}</span>
-        </div>
-        
-        <p className="text-fg-secondary leading-relaxed">
-          {item.description}
-        </p>
-      </motion.div>
-    </motion.div>
-  );
+export default function Experience() {
+  const [active, setActive] = useState(0);
+  const job = jobs[active];
 
   return (
-    <section id="experience" className="py-20 relative overflow-hidden bg-gradient-to-br from-surface-1 via-surface-2 to-surface-3">
-      <div className="absolute inset-0 hexagon-pattern opacity-20"></div>
+    <section id="experience" className="scroll-mt-24 py-12 lg:py-24">
+      <SectionHeading number="02" title="Experience" />
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10" ref={ref}>
-        <motion.div
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-          variants={containerVariants}
-          className="space-y-12"
+      <div className="flex flex-col sm:flex-row">
+        <div
+          role="tablist"
+          aria-label="Job history"
+          className="flex overflow-x-auto sm:flex-col sm:overflow-visible border-b sm:border-b-0 sm:border-l border-lightest-navy"
         >
-          {/* Section Header */}
-          <motion.div variants={itemVariants} className="text-center">
-            <h2 className="text-4xl md:text-6xl font-bold mb-4">
-              <span className="gradient-text">Experience & Education</span>
-            </h2>
-            <p className="text-fg-muted text-lg">My professional journey</p>
-          </motion.div>
+          {jobs.map((j, i) => (
+            <button
+              key={j.company}
+              role="tab"
+              aria-selected={active === i}
+              onClick={() => setActive(i)}
+              className={`shrink-0 whitespace-nowrap px-4 py-3 text-left text-sm font-mono transition-colors sm:border-l-2 sm:-ml-px ${
+                active === i
+                  ? "text-green border-b-2 sm:border-b-0 border-green bg-navy-light sm:bg-transparent"
+                  : "text-slate border-b-2 sm:border-b-0 border-transparent hover:bg-navy-light"
+              }`}
+            >
+              {j.company}
+            </button>
+          ))}
+        </div>
 
-          {/* Tabs */}
-          <Tabs defaultValue="experience" className="w-full">
-            <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 glass rounded-xl p-1 bg-transparent my-auto">
-              <TabsTrigger 
-                value="experience"
-                className="rounded-lg transition-all duration-300 data-[state=active]:!bg-brand-fill data-[state=active]:!text-brand-contrast text-fg-muted align-centent"
+        <div className="pt-6 sm:pt-0 sm:pl-8" role="tabpanel">
+          <h3 className="text-lg font-medium text-lightest-slate">
+            {job.role} <span className="text-green">@ </span>
+            <a
+              href={job.companyUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="text-green link-underline"
+            >
+              {job.company}
+            </a>
+          </h3>
+          <p className="mt-1 font-mono text-sm text-slate">{job.range}</p>
+          <ul className="mt-4 max-w-xl space-y-3 text-light-slate">
+            {job.highlights.map((h, i) => (
+              <li key={i} className="flex gap-3">
+                <span className="mt-1 text-green shrink-0">▹</span>
+                <span>{h}</span>
+              </li>
+            ))}
+          </ul>
+          <ul className="mt-4 flex flex-wrap gap-2 font-mono text-xs text-slate">
+            {job.stack.map((s) => (
+              <li
+                key={s}
+                className="rounded-full border border-lightest-navy px-3 py-1"
               >
-                <Briefcase className="w-4 h-4 mr-2" />
-                Experience
-              </TabsTrigger>
-              <TabsTrigger 
-                value="education"
-                className="rounded-lg transition-all duration-300 data-[state=active]:!bg-brand-fill data-[state=active]:!text-brand-contrast text-fg-muted"
-              >
-                <GraduationCap className="w-4 h-4 mr-2" />
-                Education
-              </TabsTrigger>
-            </TabsList>
-
-            {/* Experience Timeline */}
-            <TabsContent value="experience" className="mt-12">
-              <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                animate="visible"
-                className="max-w-3xl mx-auto"
-              >
-                {experience.map((item, index) => (
-                  <TimelineItem
-                    key={item.id}
-                    item={item}
-                    icon={Briefcase}
-                    index={index}
-                  />
-                ))}
-                {/* My Experience is my concerns 😁iv */}
-              </motion.div>
-            </TabsContent>
-
-            {/* Education Timeline */}
-            <TabsContent value="education" className="mt-12">
-              <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                animate="visible"
-                className="max-w-3xl mx-auto"
-              >
-                {education.map((item, index) => (
-                  <TimelineItem
-                    key={item.id}
-                    item={item}
-                    icon={GraduationCap}
-                    index={index}
-                  />
-                ))}
-              </motion.div>
-            </TabsContent>
-          </Tabs>
-        </motion.div>
+                {s}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );
-};
-
-export default Experience;
+}

@@ -1,183 +1,53 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { ExternalLink, Code } from 'lucide-react';
-import { FiGithub } from "react-icons/fi"
-import { projects } from '../data/portfolio';
+import SectionHeading from "./SectionHeading";
+import { projects } from "@/data/content";
 
-const Projects = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
-  const [filter, setFilter] = useState('all');
-
-  const filteredProjects = filter === 'all' 
-    ? projects 
-    : filter === 'featured'
-    ? projects.filter(p => p.featured)
-    : projects;
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 },
-    },
-  };
-
+export default function Projects() {
   return (
-    <section id="projects" className="py-20 relative overflow-hidden bg-gradient-to-br from-surface-2 to-surface-1">
-      <div className="absolute inset-0 geometric-bg opacity-20"></div>
-
-      <div className="container mx-auto px-4 md:px-6 relative z-10" ref={ref}>
-        <motion.div
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-          variants={containerVariants}
-          className="space-y-12"
-        >
-          {/* Section Header */}
-          <motion.div variants={itemVariants} className="text-center">
-            <h2 className="text-4xl md:text-6xl font-bold mb-4">
-              <span className="gradient-text">My Projects</span>
-            </h2>
-            <p className="text-fg-muted text-lg mb-8">Showcasing my best work</p>
-            
-            {/* Filter Buttons */}
-            <div className="flex justify-center space-x-4">
-              {['all', 'featured'].map((filterOption) => (
-                <motion.button
-                  key={filterOption}
-                  onClick={() => setFilter(filterOption)}
-                  className={`px-6 py-2 rounded-lg font-medium transition-all duration-300 ${
-                    filter === filterOption
-                      ? 'bg-brand-fill text-brand-contrast neon-glow'
-                      : 'glass text-fg-secondary hover:text-fg'
-                  }`}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+    <section id="projects" className="scroll-mt-24 py-12 lg:py-24">
+      <SectionHeading number="03" title="Projects" />
+      <ul className="space-y-6">
+        {projects.map((project) => (
+          <li
+            key={project.name}
+            className="group rounded-md border border-lightest-navy p-6 transition-colors hover:border-green focus-within:border-green"
+          >
+            <div className="flex items-baseline justify-between gap-4">
+              <h3 className="text-lg font-medium text-lightest-slate">
+                {project.href ? (
+                  <a
+                    href={project.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="link-underline"
+                  >
+                    {project.name}
+                  </a>
+                ) : (
+                  project.name
+                )}
+              </h3>
+              {project.repoHref && (
+                <a
+                  href={project.repoHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-mono text-xs text-slate hover:text-green shrink-0"
                 >
-                  {filterOption.charAt(0).toUpperCase() + filterOption.slice(1)}
-                </motion.button>
-              ))}
+                  Source
+                </a>
+              )}
             </div>
-          </motion.div>
-
-          {/* Projects Grid */}
-          <motion.div
-            variants={containerVariants}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
-            {filteredProjects.map((project) => (
-              <motion.div
-                key={project.id}
-                variants={itemVariants}
-                whileHover={{ y: -8 }}
-                className="glass rounded-2xl overflow-hidden card-lift group"
-              >
-                {/* Project Image */}
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-scrim via-transparent to-transparent opacity-60"></div>
-                  {project.featured && (
-                    <div className="absolute top-4 right-4 bg-brand-fill text-brand-contrast px-3 py-1 rounded-full text-xs font-semibold neon-glow">
-                      Featured
-                    </div>
-                  )}
-
-                  {/* Overlay Links — the overlay dims the artwork in both themes,
-                      so the controls on it stay light-on-dark regardless of theme */}
-                  <div className="absolute inset-0 bg-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
-                    <motion.a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 bg-cyan-500 rounded-full neon-glow"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <ExternalLink className="w-5 h-5 text-white" />
-                    </motion.a>
-                    <motion.a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <FiGithub className="w-5 h-5 text-white" />
-                    </motion.a>
-                  </div>
-                </div>
-
-                {/* Project Info */}
-                <div className="p-6 space-y-4">
-                  <h3 className="text-xl font-bold text-fg group-hover:text-brand transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-fg-muted text-sm leading-relaxed">
-                    {project.description}
-                  </p>
-
-                  {/* Technologies */}
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="px-3 py-1 bg-brand/10 text-brand text-xs rounded-full border border-brand/30"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Geometric Corner Decoration */}
-                <div className="absolute top-0 right-0 w-16 h-16 border-r-4 border-t-4 border-brand opacity-20 group-hover:opacity-100 transition-opacity"></div>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {/* View All Projects CTA */}
-          <motion.div
-            variants={itemVariants}
-            className="text-center pt-8"
-          >
-            <motion.a
-              href="https://github.com/yourusername"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 px-8 py-4 glass rounded-lg hover:neon-glow transition-all duration-300 group"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Code className="w-5 h-5 text-brand" />
-              <span className="font-semibold">View All Projects on GitHub</span>
-              <ExternalLink className="w-4 h-4 text-brand group-hover:translate-x-1 transition-transform" />
-            </motion.a>
-          </motion.div>
-        </motion.div>
-      </div>
+            <p className="mt-2 max-w-xl text-light-slate">
+              {project.description}
+            </p>
+            <ul className="mt-4 flex flex-wrap gap-2 font-mono text-xs text-slate">
+              {project.stack.map((s) => (
+                <li key={s}>{s}</li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
     </section>
   );
-};
-
-export default Projects;
+}

@@ -1,174 +1,23 @@
-// import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { Code2, Rocket, Zap, Target } from 'lucide-react';
-import { personalInfo, links } from '../data/portfolio';
+import SectionHeading from "./SectionHeading";
+import { about } from "@/data/content";
 
-const About = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
-  const highlights = [
-    {
-      icon: Code2,
-      title: 'Full-Stack Expertise',
-      description: 'Proficient in front-end and low-level programming with hands-on experience in modern frameworks.'
-    },
-    {
-      icon: Rocket,
-      title: 'Fast Learner',
-      description: 'Quickly adapting to new technologies from React to Blockchain development.'
-    },
-    {
-      icon: Zap,
-      title: 'Problem Solver',
-      description: 'Strong analytical mindset with a passion for solving complex technical challenges.'
-    },
-    {
-      icon: Target,
-      title: 'Detail-Oriented',
-      description: 'Committed to writing clean, efficient, and maintainable code.'
-    }
-  ];
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 },
-    },
-  };
-
+export default function About() {
   return (
-    <section id="about" className="py-20 relative overflow-hidden bg-gradient-to-br from-surface-2 to-surface-1">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 geometric-bg opacity-20"></div>
-
-      <div className="container mx-auto px-4 md:px-6 relative z-10" ref={ref}>
-        <motion.div
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-          variants={containerVariants}
-          className="space-y-12"
-        >
-          {/* Section Header */}
-          <motion.div variants={itemVariants} className="text-center">
-            <h2 className="text-4xl md:text-6xl font-bold mb-4">
-              <span className="gradient-text">About Me</span>
-            </h2>
-            <p className="text-fg-muted text-lg">Get to know more about who I am</p>
-          </motion.div>
-
-          {/* Main Content */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Bio Section */}
-            <motion.div variants={itemVariants} className="space-y-6">
-              <div className="glass rounded-2xl p-8 space-y-4">
-                <h3 className="text-2xl font-bold text-brand mb-4">My Journey</h3>
-                <p className="text-fg-secondary leading-relaxed text-lg">
-                  {personalInfo.description}
-                </p>
-                <div className="pt-4 space-y-2">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-brand rounded-full"></div>
-                    <span className="text-fg-muted">Location: <span className="text-fg">{personalInfo.location}</span></span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-brand rounded-full"></div>
-                    <span className="text-fg-muted">Email: <span className="text-fg">{links.contacts[0].value}</span></span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-brand rounded-full"></div>
-                    <span className="text-fg-muted">Status: <span className="text-emerald-600 dark:text-emerald-400">Available for opportunities</span></span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Highlights Grid */}
-            <motion.div
-              variants={containerVariants}
-              className="grid sm:grid-cols-2 gap-6"
-            >
-              {highlights.map((highlight, index) => {
-                const Icon = highlight.icon;
-                return (
-                  <motion.div
-                    key={index}
-                    variants={itemVariants}
-                    whileHover={{ scale: 1.05 }}
-                    className="glass rounded-xl p-6 space-y-3 card-lift cursor-pointer"
-                    id="about"
-                  >
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-brand-fill to-blue-600 flex items-center justify-center neon-glow">
-                      <Icon className="w-6 h-6 text-white" />
-                    </div>
-                    <h4 className="text-xl font-semibold text-fg">{highlight.title}</h4>
-                    <p className="text-fg-muted text-sm leading-relaxed">{highlight.description}</p>
-                  </motion.div>
-                );
-              })}
-            </motion.div>
-          </div>
-
-          {/* Additional Info */}
-          <motion.div
-            variants={itemVariants}
-            className="glass rounded-2xl p-8"
-          >
-            <div className="grid md:grid-cols-3 gap-8 text-center">
-              <div className="space-y-2">
-                <motion.h4
-                  className="text-4xl font-bold text-brand"
-                  initial={{ scale: 0 }}
-                  animate={inView ? { scale: 1 } : { scale: 0 }}
-                  transition={{ delay: 0.5, type: 'spring' }}
-                >
-                  15+
-                </motion.h4>
-                <p className="text-fg-muted">Technologies</p>
-              </div>
-              <div className="space-y-2">
-                <motion.h4
-                  className="text-4xl font-bold text-brand"
-                  initial={{ scale: 0 }}
-                  animate={inView ? { scale: 1 } : { scale: 0 }}
-                  transition={{ delay: 0.6, type: 'spring' }}
-                >
-                  10+
-                </motion.h4>
-                <p className="text-fg-muted">Projects Completed</p>
-              </div>
-              <div className="space-y-2">
-                <motion.h4
-                  className="text-4xl font-bold text-brand"
-                  initial={{ scale: 0 }}
-                  animate={inView ? { scale: 1 } : { scale: 0 }}
-                  transition={{ delay: 0.7, type: 'spring' }}
-                >
-                  2+
-                </motion.h4>
-                <p className="text-fg-muted">Years Learning</p>
-              </div>
-            </div>
-          </motion.div>
-        </motion.div>
+    <section id="about" className="scroll-mt-24 py-12 lg:py-24">
+      <SectionHeading number="01" title="About" />
+      <div className="max-w-xl space-y-4 text-light-slate">
+        {about.paragraphs.map((p, i) => (
+          <p key={i}>{p}</p>
+        ))}
       </div>
+      <ul className="mt-6 grid max-w-md grid-cols-2 gap-x-4 gap-y-2 font-mono text-sm text-slate">
+        {about.skills.map((skill) => (
+          <li key={skill} className="flex items-center gap-2">
+            <span className="text-green">▹</span>
+            {skill}
+          </li>
+        ))}
+      </ul>
     </section>
   );
-};
-
-export default About;
+}
