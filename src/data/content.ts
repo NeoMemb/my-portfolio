@@ -7,19 +7,25 @@ export const profile = {
   tagline: "I build fast, accessible interfaces for the web.",
   email: "hello@jordanavery.dev",
   location: "Austin, TX",
-  resumeUrl: "/resume.pdf",
+  // Generated on the fly by the /resume route (see src/app/resume/route.ts)
+  resumeUrl: "/resume",
 };
 
-export const socials = [
-  { label: "GitHub", href: "https://github.com/yourusername" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/yourusername" },
-  { label: "Twitter", href: "https://twitter.com/yourusername" },
+export type SocialKey = "github" | "linkedin" | "twitter" | "codepen" | "instagram";
+
+export const socials: { key: SocialKey; label: string; href: string }[] = [
+  { key: "github", label: "GitHub", href: "https://github.com/yourusername" },
+  { key: "linkedin", label: "LinkedIn", href: "https://linkedin.com/in/yourusername" },
+  { key: "twitter", label: "Twitter", href: "https://twitter.com/yourusername" },
+  { key: "codepen", label: "CodePen", href: "https://codepen.io/yourusername" },
+  { key: "instagram", label: "Instagram", href: "https://instagram.com/yourusername" },
 ];
 
 export const nav = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
+  { label: "Writing", href: "#writing" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -82,6 +88,9 @@ export type Project = {
   name: string;
   description: string;
   stack: string[];
+  // Path under /public, e.g. "/projects/project-1.svg". Optional — the card
+  // looks fine without an image.
+  image?: string;
   href?: string;
   repoHref?: string;
 };
@@ -92,6 +101,7 @@ export const projects: Project[] = [
     description:
       "A lightweight budgeting app with shared household accounts, recurring transaction rules, and CSV import.",
     stack: ["Next.js", "Prisma", "PostgreSQL"],
+    image: "/projects/project-1.svg",
     href: "https://example.com",
     repoHref: "https://github.com/yourusername/ledger",
   },
@@ -100,6 +110,7 @@ export const projects: Project[] = [
     description:
       "A command-line tool that generates an accessible color palette from a single brand hex, with contrast checks built in.",
     stack: ["Node.js", "TypeScript"],
+    image: "/projects/project-2.svg",
     repoHref: "https://github.com/yourusername/palette-cli",
   },
   {
@@ -107,7 +118,135 @@ export const projects: Project[] = [
     description:
       "An interactive map of local hiking trails with elevation profiles and offline support for spotty signal.",
     stack: ["React", "Mapbox GL", "Service Workers"],
+    image: "/projects/project-3.svg",
     href: "https://example.com",
     repoHref: "https://github.com/yourusername/trailmap",
   },
+  {
+    name: "Dotfiles",
+    description:
+      "An opinionated, well-documented set of dotfiles for a reproducible terminal setup on any machine.",
+    stack: ["Zsh", "Neovim", "tmux"],
+    image: "/projects/project-4.svg",
+    repoHref: "https://github.com/yourusername/dotfiles",
+  },
 ];
+
+export type ArchiveProject = {
+  year: string;
+  name: string;
+  description: string;
+  stack: string[];
+  href?: string;
+  repoHref?: string;
+};
+
+export const archiveProjects: ArchiveProject[] = [
+  {
+    year: "2025",
+    name: "Ledger",
+    description: "Budgeting app with shared household accounts and CSV import.",
+    stack: ["Next.js", "Prisma", "PostgreSQL"],
+    href: "https://example.com",
+    repoHref: "https://github.com/yourusername/ledger",
+  },
+  {
+    year: "2024",
+    name: "Palette CLI",
+    description: "Accessible color palette generator for the command line.",
+    stack: ["Node.js", "TypeScript"],
+    repoHref: "https://github.com/yourusername/palette-cli",
+  },
+  {
+    year: "2024",
+    name: "Trailmap",
+    description: "Offline-first hiking trail map with elevation profiles.",
+    stack: ["React", "Mapbox GL", "Service Workers"],
+    href: "https://example.com",
+    repoHref: "https://github.com/yourusername/trailmap",
+  },
+  {
+    year: "2023",
+    name: "Dotfiles",
+    description: "Reproducible terminal setup for any machine.",
+    stack: ["Zsh", "Neovim", "tmux"],
+    repoHref: "https://github.com/yourusername/dotfiles",
+  },
+  {
+    year: "2023",
+    name: "Synthwave Radio",
+    description: "24/7 lo-fi synth stream with a waveform visualizer.",
+    stack: ["SvelteKit", "Web Audio API"],
+    href: "https://example.com",
+  },
+  {
+    year: "2022",
+    name: "Changelog Digest",
+    description: "Weekly email digest of releases from repos you star.",
+    stack: ["Node.js", "Resend", "GitHub API"],
+    repoHref: "https://github.com/yourusername/changelog-digest",
+  },
+  {
+    year: "2022",
+    name: "Kanban Noir",
+    description: "A keyboard-first kanban board that lives in your terminal.",
+    stack: ["Go", "Bubble Tea"],
+    repoHref: "https://github.com/yourusername/kanban-noir",
+  },
+  {
+    year: "2021",
+    name: "This Website",
+    description: "The site you're looking at — v4, rebuilt with Next.js.",
+    stack: ["Next.js", "Tailwind CSS"],
+    repoHref: "https://github.com/yourusername/my-portfolio",
+  },
+];
+
+export type Post = {
+  title: string;
+  year: string;
+  href: string;
+  // Path under /public, e.g. "/writing/post-1.svg"
+  image: string;
+};
+
+export const writing: Post[] = [
+  {
+    title: "Designing Component APIs That Survive Contact with Users",
+    year: "2026",
+    href: "https://example.com/blog/component-apis",
+    image: "/writing/post-1.svg",
+  },
+  {
+    title: "Five Accessibility Pitfalls I Keep Seeing (Including in My Own Code)",
+    year: "2024",
+    href: "https://example.com/blog/a11y-pitfalls",
+    image: "/writing/post-2.svg",
+  },
+  {
+    title: "What Rewriting the Same App Three Times Taught Me About State",
+    year: "2022",
+    href: "https://example.com/blog/state-lessons",
+    image: "/writing/post-3.svg",
+  },
+];
+
+export const footer = {
+  credit: "Designed & built by Jordan Avery",
+  // Easter egg label — swap the label and asset to make it yours.
+  easterEggLabel: "Click for a spin",
+};
+
+// --- Résumé data (used by the PDF generator at /resume) ------------------
+// Everything else it needs — profile, jobs, projects, about.skills — is
+// shared with the site above, so the PDF always matches the page.
+
+export const resume = {
+  summary:
+    "Software engineer with six years of experience building accessible, performant web applications. Focused on the space between design and engineering: component APIs, design-system tooling, and interfaces that hold up under real product pressure.",
+  education: {
+    school: "University of Texas at Austin",
+    degree: "B.S. Computer Science",
+    range: "2015 — 2019",
+  },
+};

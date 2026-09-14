@@ -5,9 +5,9 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="scroll-mt-24 py-12 lg:py-24 lg:pb-48 text-center sm:text-left"
+      className="scroll-mt-24 py-12 lg:py-24 text-center sm:text-left"
     >
-      <SectionHeading number="04" title="Contact" />
+      <SectionHeading number="05" title="Contact" />
       <p className="max-w-md text-light-slate">
         I&apos;m not actively job hunting, but my inbox is always open.
         Whether you have a question or just want to say hi, I&apos;ll do my

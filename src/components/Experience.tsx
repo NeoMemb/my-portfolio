@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import SectionHeading from "./SectionHeading";
-import { jobs } from "@/data/content";
+import { FileIcon } from "./icons";
+import { jobs, profile } from "@/data/content";
 
 export default function Experience() {
   const [active, setActive] = useState(0);
@@ -68,6 +69,16 @@ export default function Experience() {
           </ul>
         </div>
       </div>
+
+      <a
+        href={profile.resumeUrl}
+        target="_blank"
+        rel="noreferrer"
+        className="mt-10 inline-flex items-center gap-3 rounded border border-green px-6 py-4 font-mono text-sm text-green transition-colors hover:bg-green/10 focus-visible:bg-green/10"
+      >
+        <FileIcon size={18} />
+        View Full Résumé
+      </a>
     </section>
   );
 }

@@ -37,6 +37,63 @@
   --font-sans / --font-mono values above for the generated CSS variables.
 */
 
+/*
+  Scroll-reveal: elements start hidden and slide up once scrolled into view
+  (Reveal.tsx adds .is-visible via IntersectionObserver). Reduced-motion
+  users see everything immediately with no transition.
+*/
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Skip-to-content: off-screen until focused, then a real link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  z-index: 100;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--navy-light);
+  color: var(--green);
+  border: 1px solid var(--green);
+  border-radius: 0.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+}
+
+/* Footer easter egg: spins while active */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.easter-egg-spin {
+  animation: spin 2s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .easter-egg-spin {
+    animation: none;
+  }
+}
+
 * {
   scroll-behavior: smooth;
 }

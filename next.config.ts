@@ -7,6 +7,9 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: path.resolve(),
   },
+  // @react-pdf/renderer ships its own bundling; keep it out of the server
+  // bundle so the /resume route runs it as plain Node.
+  serverExternalPackages: ["@react-pdf/renderer"],
 };
 
 export default nextConfig;
