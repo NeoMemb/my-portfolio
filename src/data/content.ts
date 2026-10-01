@@ -2,11 +2,11 @@
 // This is the only file you should need to touch to make the site yours.
 
 export const profile = {
-  name: "Jordan Avery",
+  name: "Ariori Abdulrafiu",
   title: "Software Engineer",
-  tagline: "I build fast, accessible interfaces for the web.",
-  email: "hello@jordanavery.dev",
-  location: "Austin, TX",
+  tagline: "I build effective, accessible and optimized web apps.",
+  email: "abdulrafiuariori@gmail.com",
+  location: "Lagos, Nigeria",
   // Generated on the fly by the /resume route (see src/app/resume/route.ts)
   resumeUrl: "/resume",
 };
@@ -14,11 +14,11 @@ export const profile = {
 export type SocialKey = "github" | "linkedin" | "twitter" | "codepen" | "instagram";
 
 export const socials: { key: SocialKey; label: string; href: string }[] = [
-  { key: "github", label: "GitHub", href: "https://github.com/yourusername" },
-  { key: "linkedin", label: "LinkedIn", href: "https://linkedin.com/in/yourusername" },
+  { key: "github", label: "GitHub", href: "https://github.com/neomemb" },
+  { key: "linkedin", label: "LinkedIn", href: "https://linkedin.com/in/ariori-abdulrafiu-91a0a1230" },
   { key: "twitter", label: "Twitter", href: "https://twitter.com/yourusername" },
   { key: "codepen", label: "CodePen", href: "https://codepen.io/yourusername" },
-  { key: "instagram", label: "Instagram", href: "https://instagram.com/yourusername" },
+  { key: "instagram", label: "Instagram", href: "https://instagram.com/engrariori" },
 ];
 
 export const nav = [
@@ -33,7 +33,7 @@ export const about = {
   paragraphs: [
     "I'm a software engineer who enjoys turning ambiguous problems into interfaces people barely notice using — because they just work. Most of my time is spent in the space between design and engineering, where a good decision in one saves ten headaches in the other.",
     "Currently I build tooling for internal design systems, focusing on component APIs that hold up under real product pressure rather than just looking good in a demo.",
-    "Outside of work I'm usually rock climbing, tinkering with a mechanical keyboard, or rereading the same three sci-fi novels.",
+    "Outside of work I'm usually an engineering student that enjoys collaborative projects with my colleagues, reverse engineering electronic devices, or watching  sci-fi movies and Japanese anime.",
   ],
   skills: ["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "PostgreSQL"],
 };
@@ -49,38 +49,40 @@ export type Job = {
 
 export const jobs: Job[] = [
   {
-    company: "Northwind Labs",
+    company: "RazNof Solutions",
     role: "Senior Software Engineer",
-    range: "2023 — Present",
-    companyUrl: "https://example.com",
+    range: "2026",
+    companyUrl: "https://raznofsolutions.com",
     highlights: [
-      "Led the rebuild of the customer-facing dashboard, cutting median load time from 4.1s to 1.2s.",
-      "Designed a shared component library adopted by four product teams, reducing duplicate UI code by roughly 30%.",
-      "Mentor two junior engineers through pairing sessions and structured code review.",
+      "Led the rebuild of the company's website that had poor UI/UX design, cutting median load time from 4.1s to 1.2s.",
+      "Created a messaging system for the site visitors and company customer's inquiries.",
+      "Managed AI code review with 100% pass and code coverage.",
     ],
-    stack: ["React", "TypeScript", "GraphQL"],
+    stack: ["React", "TypeScript", "NextJs", "Tailwind"],
   },
   {
-    company: "Fieldstone",
-    role: "Software Engineer",
-    range: "2021 — 2023",
+    company: "SkyScanner",
+    role: "Frontend Developer",
+    range: "2026",
     companyUrl: "https://example.com",
     highlights: [
-      "Built the payments reconciliation service handling upward of 50k transactions a day.",
+      "Built the frontend UI reconciliation service handling upward of 50k transactions a day.",
       "Introduced end-to-end test coverage for checkout flows, cutting production incidents by half.",
     ],
-    stack: ["Node.js", "PostgreSQL", "AWS"],
+    stack: ["React", "PostgreSQL", "AWS"],
   },
   {
-    company: "Bright Path Studio",
-    role: "Frontend Developer",
-    range: "2019 — 2021",
+    company: "SHOP.CO",
+    role: "Full stack Developer",
+    range: "2025 — 2026",
     companyUrl: "https://example.com",
     highlights: [
       "Shipped marketing and product sites for a range of small-business clients, from concept to launch.",
-      "Set up the studio's first shared build pipeline, standardizing linting, testing, and deploys.",
+      "Set up the admin dashboard and product adding pipeline, powerful analytics for better visual insights, standardizing product categories, testing, and deploys.",
+      "Set up the customer's visiting site and product carting pipeline, optimized product search.",
+      "Built a fully functional admin dashboard with a data-driven analytics experience, featuring interactive bar, pie, and trend charts, KPI statistics, data tables, and administrative management tools. Designed the dashboard to transform application data into clear, actionable insights while maintaining a responsive and intuitive interface."
     ],
-    stack: ["JavaScript", "Sass", "WordPress"],
+    stack: ["NextJs", "TypeScript", "ExpressJs", "Prisma ORM", "Supabase", "PostgreSQL"],
   },
 ];
 

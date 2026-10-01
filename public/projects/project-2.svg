@@ -12,5 +12,5 @@
     <rect x="440" y="160" width="120" height="120" rx="8"/>
     <path d="M220 140h50M390 180h50" stroke-opacity="0.2"/>
   </g>
-  <text x="320" y="320" text-anchor="middle" font-family="monospace" font-size="18" fill="#8892b0">project image — replace me</text>
+  <text x="320" y="320" text-anchor="middle" font-family="monospace" font-size="18" fill="#8892b0">project image — Ledger</text>
 </svg>
