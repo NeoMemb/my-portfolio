@@ -1,5 +1,5 @@
 import { Document, Page, StyleSheet, Text, View } from "@react-pdf/renderer";
-import { about, jobs, profile, projects, resume } from "@/data/content";
+import { about, jobs, profile, projects, resume, socials } from "@/data/content";
 
 // Accent colors darkened from the site palette so they read on white paper.
 const colors = {
@@ -100,11 +100,14 @@ function SectionHeading({ children }: { children: string }) {
 }
 
 export default function ResumeDocument() {
+  // Derived from `socials` so the printed links can never drift from the
+  // ones on the site.
   const contactLine = [
     profile.email,
     profile.location,
-    "github.com/yourusername",
-    "linkedin.com/in/yourusername",
+    ...socials
+      .filter((s) => s.key === "github" || s.key === "linkedin")
+      .map((s) => s.href.replace(/^https?:\/\//, "")),
   ].join("  •  ");
 
   return (

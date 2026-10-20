@@ -1,8 +1,15 @@
 import { createElement } from "react";
 import { renderToBuffer } from "@react-pdf/renderer";
 import ResumeDocument from "@/components/resume/ResumeDocument";
+import { profile } from "@/data/content";
 
 export const runtime = "nodejs";
+
+/** "Ariori Abdulrafiu" -> "ariori-abdulrafiu" */
+const filename = `${profile.name
+  .toLowerCase()
+  .replace(/[^a-z0-9]+/g, "-")
+  .replace(/^-|-$/g, "")}-cv.pdf`;
 
 export async function GET() {
   const buffer = await renderToBuffer(createElement(ResumeDocument));
@@ -12,7 +19,7 @@ export async function GET() {
       "Content-Type": "application/pdf",
       // inline lets the browser show the PDF; "Save as" still offers the
       // filename below.
-      "Content-Disposition": 'inline; filename="jordan-avery-resume.pdf"',
+      "Content-Disposition": `inline; filename="${filename}"`,
     },
   });
 }

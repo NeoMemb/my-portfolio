@@ -56,6 +56,12 @@ export default async function ProjectCaseStudyPage(
 
       <div className="mt-12 lg:flex lg:justify-between lg:gap-16">
         <article className="lg:max-w-3xl lg:flex-1">
+          <ProjectSectionNav
+            sections={caseStudy.sections}
+            collapsible
+            className="mb-10 lg:hidden"
+          />
+
           <p className="font-mono text-xs tracking-widest text-green uppercase">
             {number}
             {project.category && (

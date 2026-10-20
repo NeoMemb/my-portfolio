@@ -8,7 +8,7 @@ export default function Footer() {
   const [spinning, setSpinning] = useState(false);
 
   return (
-    <footer className="flex flex-col items-center gap-8 px-6 py-16 text-center sm:px-12 lg:px-24 lg:pb-16">
+    <footer className="flex flex-col items-center gap-8 py-16 text-center lg:pb-16">
       <SocialLinks />
 
       <p className="max-w-md font-mono text-xs leading-relaxed text-slate">

@@ -10,14 +10,21 @@ import Reveal from "@/components/Reveal";
 
 export default function Home() {
   return (
-    <div id="top" className="mx-auto max-w-6xl lg:flex">
+    <div
+      id="top"
+      className="mx-auto max-w-7xl px-6 sm:px-12 lg:flex lg:justify-between lg:gap-4 lg:px-24"
+    >
       <a href="#main" className="skip-link">
         Skip to content
       </a>
       <MobileNav />
       <Sidebar />
-      <div className="lg:ml-[400px] lg:flex-1">
-        <main id="main" className="px-6 sm:px-12 lg:px-24">
+      {/*
+        The identity column is sticky and in-flow, so the content needs no
+        offset — it just takes the remaining width.
+      */}
+      <div className="lg:w-[52%]">
+        <main id="main">
           <Reveal>
             <About />
           </Reveal>

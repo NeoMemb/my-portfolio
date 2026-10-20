@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeftIcon, ExternalIcon, GitHubIcon } from "@/components/icons";
-import { archiveProjects } from "@/data/content";
+import { archiveProjects, profile } from "@/data/content";
 
 export const metadata: Metadata = {
-  title: "Project Archive — Jordan Avery",
-  description:
-    "A full archive of things Jordan Avery has designed, built, and broken over the years.",
+  title: `Project Archive — ${profile.name}`,
+  description: `A full archive of things ${profile.name} has designed, built, and shipped over the years.`,
 };
 
 export default function ArchivePage() {

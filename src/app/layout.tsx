@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import CursorGlow from "@/components/CursorGlow";
+import { availability, profile } from "@/data/content";
 import "./globals.css";
 
+// This is what shows in search results, browser tabs and link previews, so it
+// leads with the role being hired for and the stack recruiters search on.
 export const metadata: Metadata = {
-  title: "Jordan Avery — Software Engineer",
-  description:
-    "Jordan Avery is a software engineer who builds accessible, performant experiences for the web.",
+  title: `${profile.name} — ${profile.title}`,
+  description: `${profile.title} in ${profile.location} building accessible, performant web apps with React, Next.js and TypeScript. Open to ${availability.roles.join(", ")} roles.`,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
