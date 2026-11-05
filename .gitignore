@@ -26,4 +26,4 @@ dist-ssr
 *.sw?
 
 # Polinguard report files
-scan-2026*
+scan-20*
