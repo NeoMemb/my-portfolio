@@ -496,402 +496,402 @@ export const projects: Project[] = [
       ],
     },
   },
-  {
-    name: "Ledger",
-    description:
-      "A lightweight budgeting app with shared household accounts, recurring transaction rules, and CSV import.",
-    stack: ["Next.js", "Prisma", "PostgreSQL"],
-    image: "/projects/project-1.svg",
-    href: "https://example.com",
-    repoHref: "https://github.com/yourusername/ledger",
-    slug: "ledger",
-    category: "Product Engineering",
-    year: "2025",
-    status: "Live",
-    featured: true,
-    attribution: "TODO — e.g. Solo · product, frontend, backend · 2025",
-    detailStack: ["Next.js", "Prisma", "PostgreSQL", "Auth", "CSV"],
-    caseStudy: {
-      heroNote: "TODO — replace with a real screenshot of Ledger.",
-      sections: [
-        {
-          id: "overview",
-          title: "Project Overview",
-          body: [
-            "TODO — what Ledger is, who it's for, and what you personally built. Two or three sentences.",
-          ],
-        },
-        {
-          id: "problem",
-          title: "Problem Statement",
-          body: [
-            "TODO — the situation that made this worth building. What was broken, awkward, or missing before?",
-          ],
-        },
-        {
-          id: "goals",
-          title: "Goals & Success Metrics",
-          bullets: [
-            "TODO — a concrete, measurable goal (e.g. \"add a shared transaction in under three taps\").",
-            "TODO — a second goal, ideally something you could verify.",
-            "TODO — a third goal, or a constraint you refused to compromise on.",
-          ],
-        },
-        {
-          id: "discovery",
-          title: "Research & Discovery",
-          body: [
-            "TODO — what you looked at before building: competing tools, conversations with users, spikes, benchmarks.",
-          ],
-        },
-        {
-          id: "ideation",
-          title: "Ideation & Concept Development",
-          body: [
-            "TODO — the approaches you considered and the ones you rejected, with the reason you rejected them.",
-          ],
-        },
-        {
-          id: "architecture",
-          title: "Design & Architecture",
-          body: [
-            "TODO — how it's put together: data model, key modules, the parts you'd redraw if you started again.",
-          ],
-        },
-        {
-          id: "challenges",
-          title: "Challenges",
-          challenges: [
-            {
-              title: "TODO — name the hardest problem",
-              problem:
-                "TODO — what made it hard, and what went wrong when you first tried the obvious fix.",
-              solution:
-                "TODO — what you actually did, and how you knew it worked.",
-            },
-            {
-              title: "TODO — a second problem",
-              problem: "TODO — the failure mode you hit.",
-              solution: "TODO — the fix and its trade-off.",
-            },
-          ],
-        },
-        {
-          id: "testing",
-          title: "Testing & Iteration",
-          body: [
-            "TODO — how you checked it worked, what broke in real use, and what you changed as a result.",
-          ],
-        },
-        {
-          id: "results",
-          title: "Results & Impact",
-          stats: [
-            { value: "TODO", label: "TODO — the metric", note: "unverified" },
-            { value: "TODO", label: "TODO — the metric", note: "unverified" },
-            { value: "Live", label: "TODO — what shipped" },
-          ],
-        },
-        {
-          id: "retrospective",
-          title: "Retrospective",
-          body: [
-            "TODO — what you'd do differently, and what you'd do the same way again.",
-          ],
-        },
-      ],
-    },
-  },
-  {
-    name: "Palette CLI",
-    description:
-      "A command-line tool that generates an accessible color palette from a single brand hex, with contrast checks built in.",
-    stack: ["Node.js", "TypeScript"],
-    image: "/projects/project-2.svg",
-    repoHref: "https://github.com/yourusername/palette-cli",
-    slug: "palette-cli",
-    category: "Developer Tooling",
-    year: "2024",
-    status: "Live",
-    featured: true,
-    attribution: "TODO — e.g. Solo · design, engineering · 2024",
-    detailStack: ["Node.js", "TypeScript", "WCAG", "CLI"],
-    caseStudy: {
-      heroNote: "TODO — replace with a real screenshot of Palette CLI.",
-      sections: [
-        {
-          id: "overview",
-          title: "Project Overview",
-          body: [
-            "TODO — what Palette CLI does, who runs it, and what you built. Two or three sentences.",
-          ],
-        },
-        {
-          id: "problem",
-          title: "Problem Statement",
-          body: [
-            "TODO — why generating an accessible palette by hand is painful, and who it hurts.",
-          ],
-        },
-        {
-          id: "goals",
-          title: "Goals & Success Metrics",
-          bullets: [
-            "TODO — a measurable goal (e.g. \"a passing palette from one hex, in one command\").",
-            "TODO — a second goal.",
-            "TODO — a constraint you held to.",
-          ],
-        },
-        {
-          id: "discovery",
-          title: "Research & Discovery",
-          body: [
-            "TODO — which contrast rules you followed, what existing tools got wrong, what you tested against.",
-          ],
-        },
-        {
-          id: "ideation",
-          title: "Ideation & Concept Development",
-          body: [
-            "TODO — the interfaces you tried (flags, prompts, config file) and why you landed on this one.",
-          ],
-        },
-        {
-          id: "architecture",
-          title: "Design & Architecture",
-          body: [
-            "TODO — the colour maths, the module split, and how output is generated.",
-          ],
-        },
-        {
-          id: "challenges",
-          title: "Challenges",
-          challenges: [
-            {
-              title: "TODO — name the hardest problem",
-              problem: "TODO — what made it hard.",
-              solution: "TODO — how you solved it.",
-            },
-          ],
-        },
-        {
-          id: "testing",
-          title: "Testing & Iteration",
-          body: [
-            "TODO — how you verified the contrast maths, and what real palettes exposed.",
-          ],
-        },
-        {
-          id: "results",
-          title: "Results & Impact",
-          stats: [
-            { value: "TODO", label: "TODO — the metric", note: "unverified" },
-            { value: "Live", label: "TODO — what shipped" },
-          ],
-        },
-        {
-          id: "retrospective",
-          title: "Retrospective",
-          body: ["TODO — what you'd change next time."],
-        },
-      ],
-    },
-  },
-  {
-    name: "Trailmap",
-    description:
-      "An interactive map of local hiking trails with elevation profiles and offline support for spotty signal.",
-    stack: ["React", "Mapbox GL", "Service Workers"],
-    image: "/projects/project-3.svg",
-    href: "https://example.com",
-    repoHref: "https://github.com/yourusername/trailmap",
-    slug: "trailmap",
-    category: "Product Engineering",
-    year: "2024",
-    status: "In Progress",
-    attribution: "TODO — e.g. Solo · frontend, mapping · 2024",
-    detailStack: ["React", "Mapbox GL", "Service Workers", "IndexedDB"],
-    caseStudy: {
-      heroNote: "TODO — replace with a real screenshot of Trailmap.",
-      sections: [
-        {
-          id: "overview",
-          title: "Project Overview",
-          body: [
-            "TODO — what Trailmap is, where it works, and what you built. Two or three sentences.",
-          ],
-        },
-        {
-          id: "problem",
-          title: "Problem Statement",
-          body: [
-            "TODO — why trail maps fail exactly where hikers need them, and what that costs.",
-          ],
-        },
-        {
-          id: "goals",
-          title: "Goals & Success Metrics",
-          bullets: [
-            "TODO — a measurable goal (e.g. \"a full trail usable with the radio off\").",
-            "TODO — a second goal.",
-            "TODO — a constraint you held to.",
-          ],
-        },
-        {
-          id: "discovery",
-          title: "Research & Discovery",
-          body: [
-            "TODO — how you sourced trail data, what the tile budget looked like, what throttled-network tests showed.",
-          ],
-        },
-        {
-          id: "ideation",
-          title: "Ideation & Concept Development",
-          body: [
-            "TODO — the offline strategies you weighed (cache-first, prefetch region, download-on-wifi) and your choice.",
-          ],
-        },
-        {
-          id: "architecture",
-          title: "Design & Architecture",
-          body: [
-            "TODO — map layer, cache strategy, storage limits, and how elevation profiles are computed.",
-          ],
-        },
-        {
-          id: "challenges",
-          title: "Challenges",
-          challenges: [
-            {
-              title: "TODO — name the hardest problem",
-              problem: "TODO — what made it hard.",
-              solution: "TODO — how you solved it.",
-            },
-            {
-              title: "TODO — a second problem",
-              problem: "TODO — the failure mode you hit.",
-              solution: "TODO — the fix and its trade-off.",
-            },
-          ],
-        },
-        {
-          id: "testing",
-          title: "Testing & Iteration",
-          body: [
-            "TODO — how you tested offline behaviour and on which devices.",
-          ],
-        },
-        {
-          id: "results",
-          title: "Results & Impact",
-          stats: [
-            { value: "TODO", label: "TODO — the metric", note: "unverified" },
-            { value: "In Progress", label: "TODO — what works today" },
-          ],
-        },
-        {
-          id: "retrospective",
-          title: "Retrospective",
-          body: ["TODO — what you'd change next time."],
-        },
-      ],
-    },
-  },
-  {
-    name: "Dotfiles",
-    description:
-      "An opinionated, well-documented set of dotfiles for a reproducible terminal setup on any machine.",
-    stack: ["Zsh", "Neovim", "tmux"],
-    image: "/projects/project-4.svg",
-    repoHref: "https://github.com/yourusername/dotfiles",
-    slug: "dotfiles",
-    category: "Developer Tooling",
-    year: "2023",
-    status: "Live",
-    attribution: "TODO — e.g. Solo · tooling · 2023",
-    detailStack: ["Zsh", "Neovim", "tmux", "GNU Stow"],
-    caseStudy: {
-      heroNote: "TODO — replace with a real screenshot of the terminal setup.",
-      sections: [
-        {
-          id: "overview",
-          title: "Project Overview",
-          body: [
-            "TODO — what the setup includes and what a fresh machine looks like after installing it.",
-          ],
-        },
-        {
-          id: "problem",
-          title: "Problem Statement",
-          body: [
-            "TODO — what breaks when your config only lives on one laptop.",
-          ],
-        },
-        {
-          id: "goals",
-          title: "Goals & Success Metrics",
-          bullets: [
-            "TODO — a measurable goal (e.g. \"a new machine is useful in under ten minutes\").",
-            "TODO — a second goal.",
-            "TODO — a constraint you held to.",
-          ],
-        },
-        {
-          id: "discovery",
-          title: "Research & Discovery",
-          body: [
-            "TODO — which setups you studied and what you took from each.",
-          ],
-        },
-        {
-          id: "ideation",
-          title: "Ideation & Concept Development",
-          body: [
-            "TODO — bootstrap script vs. symlink manager vs. bare repo, and why you chose this.",
-          ],
-        },
-        {
-          id: "architecture",
-          title: "Design & Architecture",
-          body: [
-            "TODO — the layout, how it's linked into place, and how it stays portable across machines.",
-          ],
-        },
-        {
-          id: "challenges",
-          title: "Challenges",
-          challenges: [
-            {
-              title: "TODO — name the hardest problem",
-              problem:
-                "TODO — what made it hard (secrets, machine-specific paths, plugin drift).",
-              solution: "TODO — how you solved it.",
-            },
-          ],
-        },
-        {
-          id: "testing",
-          title: "Testing & Iteration",
-          body: [
-            "TODO — how you verified a clean install, and what broke the first time.",
-          ],
-        },
-        {
-          id: "results",
-          title: "Results & Impact",
-          stats: [
-            { value: "TODO", label: "TODO — setup time", note: "unverified" },
-            { value: "Live", label: "TODO — what shipped" },
-          ],
-        },
-        {
-          id: "retrospective",
-          title: "Retrospective",
-          body: ["TODO — what you'd change next time."],
-        },
-      ],
-    },
-  },
+  // {
+  //   name: "Ledger",
+  //   description:
+  //     "A lightweight budgeting app with shared household accounts, recurring transaction rules, and CSV import.",
+  //   stack: ["Next.js", "Prisma", "PostgreSQL"],
+  //   image: "/projects/project-1.svg",
+  //   href: "https://example.com",
+  //   repoHref: "https://github.com/yourusername/ledger",
+  //   slug: "ledger",
+  //   category: "Product Engineering",
+  //   year: "2025",
+  //   status: "Live",
+  //   featured: true,
+  //   attribution: "TODO — e.g. Solo · product, frontend, backend · 2025",
+  //   detailStack: ["Next.js", "Prisma", "PostgreSQL", "Auth", "CSV"],
+  //   caseStudy: {
+  //     heroNote: "TODO — replace with a real screenshot of Ledger.",
+  //     sections: [
+  //       {
+  //         id: "overview",
+  //         title: "Project Overview",
+  //         body: [
+  //           "TODO — what Ledger is, who it's for, and what you personally built. Two or three sentences.",
+  //         ],
+  //       },
+  //       {
+  //         id: "problem",
+  //         title: "Problem Statement",
+  //         body: [
+  //           "TODO — the situation that made this worth building. What was broken, awkward, or missing before?",
+  //         ],
+  //       },
+  //       {
+  //         id: "goals",
+  //         title: "Goals & Success Metrics",
+  //         bullets: [
+  //           "TODO — a concrete, measurable goal (e.g. \"add a shared transaction in under three taps\").",
+  //           "TODO — a second goal, ideally something you could verify.",
+  //           "TODO — a third goal, or a constraint you refused to compromise on.",
+  //         ],
+  //       },
+  //       {
+  //         id: "discovery",
+  //         title: "Research & Discovery",
+  //         body: [
+  //           "TODO — what you looked at before building: competing tools, conversations with users, spikes, benchmarks.",
+  //         ],
+  //       },
+  //       {
+  //         id: "ideation",
+  //         title: "Ideation & Concept Development",
+  //         body: [
+  //           "TODO — the approaches you considered and the ones you rejected, with the reason you rejected them.",
+  //         ],
+  //       },
+  //       {
+  //         id: "architecture",
+  //         title: "Design & Architecture",
+  //         body: [
+  //           "TODO — how it's put together: data model, key modules, the parts you'd redraw if you started again.",
+  //         ],
+  //       },
+  //       {
+  //         id: "challenges",
+  //         title: "Challenges",
+  //         challenges: [
+  //           {
+  //             title: "TODO — name the hardest problem",
+  //             problem:
+  //               "TODO — what made it hard, and what went wrong when you first tried the obvious fix.",
+  //             solution:
+  //               "TODO — what you actually did, and how you knew it worked.",
+  //           },
+  //           {
+  //             title: "TODO — a second problem",
+  //             problem: "TODO — the failure mode you hit.",
+  //             solution: "TODO — the fix and its trade-off.",
+  //           },
+  //         ],
+  //       },
+  //       {
+  //         id: "testing",
+  //         title: "Testing & Iteration",
+  //         body: [
+  //           "TODO — how you checked it worked, what broke in real use, and what you changed as a result.",
+  //         ],
+  //       },
+  //       {
+  //         id: "results",
+  //         title: "Results & Impact",
+  //         stats: [
+  //           { value: "TODO", label: "TODO — the metric", note: "unverified" },
+  //           { value: "TODO", label: "TODO — the metric", note: "unverified" },
+  //           { value: "Live", label: "TODO — what shipped" },
+  //         ],
+  //       },
+  //       {
+  //         id: "retrospective",
+  //         title: "Retrospective",
+  //         body: [
+  //           "TODO — what you'd do differently, and what you'd do the same way again.",
+  //         ],
+  //       },
+  //     ],
+  //   },
+  // },
+  // {
+  //   name: "Palette CLI",
+  //   description:
+  //     "A command-line tool that generates an accessible color palette from a single brand hex, with contrast checks built in.",
+  //   stack: ["Node.js", "TypeScript"],
+  //   image: "/projects/project-2.svg",
+  //   repoHref: "https://github.com/yourusername/palette-cli",
+  //   slug: "palette-cli",
+  //   category: "Developer Tooling",
+  //   year: "2024",
+  //   status: "Live",
+  //   featured: true,
+  //   attribution: "TODO — e.g. Solo · design, engineering · 2024",
+  //   detailStack: ["Node.js", "TypeScript", "WCAG", "CLI"],
+  //   caseStudy: {
+  //     heroNote: "TODO — replace with a real screenshot of Palette CLI.",
+  //     sections: [
+  //       {
+  //         id: "overview",
+  //         title: "Project Overview",
+  //         body: [
+  //           "TODO — what Palette CLI does, who runs it, and what you built. Two or three sentences.",
+  //         ],
+  //       },
+  //       {
+  //         id: "problem",
+  //         title: "Problem Statement",
+  //         body: [
+  //           "TODO — why generating an accessible palette by hand is painful, and who it hurts.",
+  //         ],
+  //       },
+  //       {
+  //         id: "goals",
+  //         title: "Goals & Success Metrics",
+  //         bullets: [
+  //           "TODO — a measurable goal (e.g. \"a passing palette from one hex, in one command\").",
+  //           "TODO — a second goal.",
+  //           "TODO — a constraint you held to.",
+  //         ],
+  //       },
+  //       {
+  //         id: "discovery",
+  //         title: "Research & Discovery",
+  //         body: [
+  //           "TODO — which contrast rules you followed, what existing tools got wrong, what you tested against.",
+  //         ],
+  //       },
+  //       {
+  //         id: "ideation",
+  //         title: "Ideation & Concept Development",
+  //         body: [
+  //           "TODO — the interfaces you tried (flags, prompts, config file) and why you landed on this one.",
+  //         ],
+  //       },
+  //       {
+  //         id: "architecture",
+  //         title: "Design & Architecture",
+  //         body: [
+  //           "TODO — the colour maths, the module split, and how output is generated.",
+  //         ],
+  //       },
+  //       {
+  //         id: "challenges",
+  //         title: "Challenges",
+  //         challenges: [
+  //           {
+  //             title: "TODO — name the hardest problem",
+  //             problem: "TODO — what made it hard.",
+  //             solution: "TODO — how you solved it.",
+  //           },
+  //         ],
+  //       },
+  //       {
+  //         id: "testing",
+  //         title: "Testing & Iteration",
+  //         body: [
+  //           "TODO — how you verified the contrast maths, and what real palettes exposed.",
+  //         ],
+  //       },
+  //       {
+  //         id: "results",
+  //         title: "Results & Impact",
+  //         stats: [
+  //           { value: "TODO", label: "TODO — the metric", note: "unverified" },
+  //           { value: "Live", label: "TODO — what shipped" },
+  //         ],
+  //       },
+  //       {
+  //         id: "retrospective",
+  //         title: "Retrospective",
+  //         body: ["TODO — what you'd change next time."],
+  //       },
+  //     ],
+  //   },
+  // },
+  // {
+  //   name: "Trailmap",
+  //   description:
+  //     "An interactive map of local hiking trails with elevation profiles and offline support for spotty signal.",
+  //   stack: ["React", "Mapbox GL", "Service Workers"],
+  //   image: "/projects/project-3.svg",
+  //   href: "https://example.com",
+  //   repoHref: "https://github.com/yourusername/trailmap",
+  //   slug: "trailmap",
+  //   category: "Product Engineering",
+  //   year: "2024",
+  //   status: "In Progress",
+  //   attribution: "TODO — e.g. Solo · frontend, mapping · 2024",
+  //   detailStack: ["React", "Mapbox GL", "Service Workers", "IndexedDB"],
+  //   caseStudy: {
+  //     heroNote: "TODO — replace with a real screenshot of Trailmap.",
+  //     sections: [
+  //       {
+  //         id: "overview",
+  //         title: "Project Overview",
+  //         body: [
+  //           "TODO — what Trailmap is, where it works, and what you built. Two or three sentences.",
+  //         ],
+  //       },
+  //       {
+  //         id: "problem",
+  //         title: "Problem Statement",
+  //         body: [
+  //           "TODO — why trail maps fail exactly where hikers need them, and what that costs.",
+  //         ],
+  //       },
+  //       {
+  //         id: "goals",
+  //         title: "Goals & Success Metrics",
+  //         bullets: [
+  //           "TODO — a measurable goal (e.g. \"a full trail usable with the radio off\").",
+  //           "TODO — a second goal.",
+  //           "TODO — a constraint you held to.",
+  //         ],
+  //       },
+  //       {
+  //         id: "discovery",
+  //         title: "Research & Discovery",
+  //         body: [
+  //           "TODO — how you sourced trail data, what the tile budget looked like, what throttled-network tests showed.",
+  //         ],
+  //       },
+  //       {
+  //         id: "ideation",
+  //         title: "Ideation & Concept Development",
+  //         body: [
+  //           "TODO — the offline strategies you weighed (cache-first, prefetch region, download-on-wifi) and your choice.",
+  //         ],
+  //       },
+  //       {
+  //         id: "architecture",
+  //         title: "Design & Architecture",
+  //         body: [
+  //           "TODO — map layer, cache strategy, storage limits, and how elevation profiles are computed.",
+  //         ],
+  //       },
+  //       {
+  //         id: "challenges",
+  //         title: "Challenges",
+  //         challenges: [
+  //           {
+  //             title: "TODO — name the hardest problem",
+  //             problem: "TODO — what made it hard.",
+  //             solution: "TODO — how you solved it.",
+  //           },
+  //           {
+  //             title: "TODO — a second problem",
+  //             problem: "TODO — the failure mode you hit.",
+  //             solution: "TODO — the fix and its trade-off.",
+  //           },
+  //         ],
+  //       },
+  //       {
+  //         id: "testing",
+  //         title: "Testing & Iteration",
+  //         body: [
+  //           "TODO — how you tested offline behaviour and on which devices.",
+  //         ],
+  //       },
+  //       {
+  //         id: "results",
+  //         title: "Results & Impact",
+  //         stats: [
+  //           { value: "TODO", label: "TODO — the metric", note: "unverified" },
+  //           { value: "In Progress", label: "TODO — what works today" },
+  //         ],
+  //       },
+  //       {
+  //         id: "retrospective",
+  //         title: "Retrospective",
+  //         body: ["TODO — what you'd change next time."],
+  //       },
+  //     ],
+  //   },
+  // },
+  // {
+  //   name: "Dotfiles",
+  //   description:
+  //     "An opinionated, well-documented set of dotfiles for a reproducible terminal setup on any machine.",
+  //   stack: ["Zsh", "Neovim", "tmux"],
+  //   image: "/projects/project-4.svg",
+  //   repoHref: "https://github.com/yourusername/dotfiles",
+  //   slug: "dotfiles",
+  //   category: "Developer Tooling",
+  //   year: "2023",
+  //   status: "Live",
+  //   attribution: "TODO — e.g. Solo · tooling · 2023",
+  //   detailStack: ["Zsh", "Neovim", "tmux", "GNU Stow"],
+  //   caseStudy: {
+  //     heroNote: "TODO — replace with a real screenshot of the terminal setup.",
+  //     sections: [
+  //       {
+  //         id: "overview",
+  //         title: "Project Overview",
+  //         body: [
+  //           "TODO — what the setup includes and what a fresh machine looks like after installing it.",
+  //         ],
+  //       },
+  //       {
+  //         id: "problem",
+  //         title: "Problem Statement",
+  //         body: [
+  //           "TODO — what breaks when your config only lives on one laptop.",
+  //         ],
+  //       },
+  //       {
+  //         id: "goals",
+  //         title: "Goals & Success Metrics",
+  //         bullets: [
+  //           "TODO — a measurable goal (e.g. \"a new machine is useful in under ten minutes\").",
+  //           "TODO — a second goal.",
+  //           "TODO — a constraint you held to.",
+  //         ],
+  //       },
+  //       {
+  //         id: "discovery",
+  //         title: "Research & Discovery",
+  //         body: [
+  //           "TODO — which setups you studied and what you took from each.",
+  //         ],
+  //       },
+  //       {
+  //         id: "ideation",
+  //         title: "Ideation & Concept Development",
+  //         body: [
+  //           "TODO — bootstrap script vs. symlink manager vs. bare repo, and why you chose this.",
+  //         ],
+  //       },
+  //       {
+  //         id: "architecture",
+  //         title: "Design & Architecture",
+  //         body: [
+  //           "TODO — the layout, how it's linked into place, and how it stays portable across machines.",
+  //         ],
+  //       },
+  //       {
+  //         id: "challenges",
+  //         title: "Challenges",
+  //         challenges: [
+  //           {
+  //             title: "TODO — name the hardest problem",
+  //             problem:
+  //               "TODO — what made it hard (secrets, machine-specific paths, plugin drift).",
+  //             solution: "TODO — how you solved it.",
+  //           },
+  //         ],
+  //       },
+  //       {
+  //         id: "testing",
+  //         title: "Testing & Iteration",
+  //         body: [
+  //           "TODO — how you verified a clean install, and what broke the first time.",
+  //         ],
+  //       },
+  //       {
+  //         id: "results",
+  //         title: "Results & Impact",
+  //         stats: [
+  //           { value: "TODO", label: "TODO — setup time", note: "unverified" },
+  //           { value: "Live", label: "TODO — what shipped" },
+  //         ],
+  //       },
+  //       {
+  //         id: "retrospective",
+  //         title: "Retrospective",
+  //         body: ["TODO — what you'd change next time."],
+  //       },
+  //     ],
+  //   },
+  // },
 ];
 
 export type ArchiveProject = {
