@@ -19,7 +19,7 @@ export const availability = {
   open: true,
   // Be specific: recruiters scan for an exact role title, so name the job you
   // want, not a category. The first entry is used as your headline.
-  roles: ["Frontend Engineer", "Full Stack Engineer", "Software Engineer"],
+  roles: ["Frontend Engineer", "Backend Engineer", "Full Stack Engineer", "Software Engineer"],
   // How and where you'll work.
   arrangement: "Remote, hybrid, or on-site in Lagos",
   // When you can start.
@@ -904,63 +904,159 @@ export type ArchiveProject = {
 };
 
 export const archiveProjects: ArchiveProject[] = [
+  // --- From github.com/NeoMemb ------------------------------------------
+  // Only repos that are yours (not forks) and stand alone as a project.
+  // ALX curriculum mirrors (alx-low_level_programming, alx-react and so on)
+  // are deliberately not listed individually — they are course work, not
+  // projects. Descriptions stay factual: repo name, language, and what the
+  // README/code actually contains.
   {
-    year: "2025",
-    name: "Ledger",
-    description: "Budgeting app with shared household accounts and CSV import.",
-    stack: ["Next.js", "Prisma", "PostgreSQL"],
-    href: "https://example.com",
-    repoHref: "https://github.com/yourusername/ledger",
+    year: "2026",
+    name: "Data Structures & Algorithms",
+    description:
+      "A practice and reference repository for common data structures and algorithms in JavaScript and Python, documented JSDoc-style.",
+    stack: ["JavaScript", "Python", "Rust"],
+    repoHref: "https://github.com/NeoMemb/Data-Structure-and-Algorithm",
+  },
+  {
+    year: "2026",
+    name: "Roadmap Projects",
+    description:
+      "Front-end projects from the roadmap.sh curriculum, collected and deployed together as one site.",
+    stack: ["HTML", "CSS", "JavaScript"],
+    href: "https://ariori-roadmap-sh-projects.vercel.app",
+    repoHref: "https://github.com/NeoMemb/Ariori-roadmap.sh-projects",
+  },
+  {
+    year: "2026",
+    name: "Front-End Practice",
+    description:
+      "Early HTML and CSS builds collected into a single deployed site while working through layout and responsive fundamentals.",
+    stack: ["HTML", "CSS", "JavaScript"],
+    href: "https://front-end-practice-two.vercel.app",
+    repoHref: "https://github.com/NeoMemb/Front-end_practice",
   },
   {
     year: "2024",
-    name: "Palette CLI",
-    description: "Accessible color palette generator for the command line.",
-    stack: ["Node.js", "TypeScript"],
-    repoHref: "https://github.com/yourusername/palette-cli",
+    name: "simple_shell",
+    description:
+      "A Unix shell written from scratch in C — command parsing, PATH lookup, built-ins, and process creation with fork and exec.",
+    stack: ["C", "Unix", "Make"],
+    repoHref: "https://github.com/NeoMemb/simple_shell",
   },
   {
     year: "2024",
-    name: "Trailmap",
-    description: "Offline-first hiking trail map with elevation profiles.",
-    stack: ["React", "Mapbox GL", "Service Workers"],
-    href: "https://example.com",
-    repoHref: "https://github.com/yourusername/trailmap",
+    name: "AirBnB Clone",
+    description:
+      "A full-stack Airbnb clone built in stages: a Python command console, then file and MySQL storage, then a REST API and web front end.",
+    stack: ["Python", "MySQL", "Flask", "REST API"],
+    repoHref: "https://github.com/NeoMemb/AirBnB_clone_v3",
+  },
+  {
+    year: "2024",
+    name: "Monty Interpreter",
+    description:
+      "An interpreter for Monty bytecode in C, implementing stack and queue operations over a text opcode stream.",
+    stack: ["C", "Make"],
+    repoHref: "https://github.com/NeoMemb/monty",
+  },
+  {
+    year: "2024",
+    name: "Binary Trees",
+    description:
+      "Binary tree implementations and traversals in C, with the time complexity of each operation documented alongside it.",
+    stack: ["C", "Algorithms"],
+    repoHref: "https://github.com/NeoMemb/binary_trees",
+  },
+  {
+    year: "2024",
+    name: "Sorting Algorithms",
+    description:
+      "The classic sorting algorithms implemented in C, each written up with its Big-O time and space complexity.",
+    stack: ["C", "Algorithms"],
+    repoHref: "https://github.com/NeoMemb/sorting_algorithms",
+  },
+  {
+    year: "2024",
+    name: "RSA Factoring Challenge",
+    description:
+      "A factoring challenge: break weakly generated RSA keys by factoring their semiprime modulus, in Python and C.",
+    stack: ["Python", "C", "Number Theory"],
+    repoHref: "https://github.com/NeoMemb/RSA-Factoring-Challenge",
+  },
+  {
+    year: "2024",
+    name: "Fix My Code Challenge",
+    description:
+      "A debugging challenge — read unfamiliar code, find the deliberate bugs, and repair it without rewriting the program.",
+    stack: ["JavaScript", "Debugging"],
+    repoHref: "https://github.com/NeoMemb/Fix_My_Code_Challenge",
   },
   {
     year: "2023",
-    name: "Dotfiles",
-    description: "Reproducible terminal setup for any machine.",
-    stack: ["Zsh", "Neovim", "tmux"],
-    repoHref: "https://github.com/yourusername/dotfiles",
+    name: "printf",
+    description:
+      "A from-scratch reimplementation of C's printf, handling format specifiers, flags, width and precision.",
+    stack: ["C", "Make"],
+    repoHref: "https://github.com/NeoMemb/printf",
   },
-  {
-    year: "2023",
-    name: "Synthwave Radio",
-    description: "24/7 lo-fi synth stream with a waveform visualizer.",
-    stack: ["SvelteKit", "Web Audio API"],
-    href: "https://example.com",
-  },
-  {
-    year: "2022",
-    name: "Changelog Digest",
-    description: "Weekly email digest of releases from repos you star.",
-    stack: ["Node.js", "Resend", "GitHub API"],
-    repoHref: "https://github.com/yourusername/changelog-digest",
-  },
-  {
-    year: "2022",
-    name: "Kanban Noir",
-    description: "A keyboard-first kanban board that lives in your terminal.",
-    stack: ["Go", "Bubble Tea"],
-    repoHref: "https://github.com/yourusername/kanban-noir",
-  },
+  // {
+  //   year: "2025",
+  //   name: "Ledger",
+  //   description: "Budgeting app with shared household accounts and CSV import.",
+  //   stack: ["Next.js", "Prisma", "PostgreSQL"],
+  //   href: "https://example.com",
+  //   repoHref: "https://github.com/yourusername/ledger",
+  // },
+  // {
+  //   year: "2024",
+  //   name: "Palette CLI",
+  //   description: "Accessible color palette generator for the command line.",
+  //   stack: ["Node.js", "TypeScript"],
+  //   repoHref: "https://github.com/yourusername/palette-cli",
+  // },
+  // {
+  //   year: "2024",
+  //   name: "Trailmap",
+  //   description: "Offline-first hiking trail map with elevation profiles.",
+  //   stack: ["React", "Mapbox GL", "Service Workers"],
+  //   href: "https://example.com",
+  //   repoHref: "https://github.com/yourusername/trailmap",
+  // },
+  // {
+  //   year: "2023",
+  //   name: "Dotfiles",
+  //   description: "Reproducible terminal setup for any machine.",
+  //   stack: ["Zsh", "Neovim", "tmux"],
+  //   repoHref: "https://github.com/yourusername/dotfiles",
+  // },
+  // {
+  //   year: "2023",
+  //   name: "Synthwave Radio",
+  //   description: "24/7 lo-fi synth stream with a waveform visualizer.",
+  //   stack: ["SvelteKit", "Web Audio API"],
+  //   href: "https://example.com",
+  // },
+  // {
+  //   year: "2022",
+  //   name: "Changelog Digest",
+  //   description: "Weekly email digest of releases from repos you star.",
+  //   stack: ["Node.js", "Resend", "GitHub API"],
+  //   repoHref: "https://github.com/yourusername/changelog-digest",
+  // },
+  // {
+  //   year: "2022",
+  //   name: "Kanban Noir",
+  //   description: "A keyboard-first kanban board that lives in your terminal.",
+  //   stack: ["Go", "Bubble Tea"],
+  //   repoHref: "https://github.com/yourusername/kanban-noir",
+  // },
   {
     year: "2021",
     name: "This Website",
     description: "The site you're looking at — v4, rebuilt with Next.js.",
     stack: ["Next.js", "Tailwind CSS"],
-    repoHref: "https://github.com/yourusername/my-portfolio",
+    repoHref: "https://github.com/neomemb/my-portfolio",
   },
 ];
 
